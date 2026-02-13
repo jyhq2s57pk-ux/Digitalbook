@@ -1,0 +1,5 @@
+{
+  "title": "{{MONTH}} {{YEAR}} Edition",
+  "date": "{{YEAR}}-{{MONTH_NUM}}-01",
+  "intro": "Welcome to the {{MONTH}} {{YEAR}} edition of the Avolta Digital Book. Here you'll find the latest digital features and updates across all work streams."
+}

@@ -1,0 +1,6 @@
+{
+  "title": "{{SECTION_TITLE}}",
+  "summary": "",
+  "color": "{{SECTION_COLOR}}",
+  "order": "{{SECTION_ORDER}}"
+}

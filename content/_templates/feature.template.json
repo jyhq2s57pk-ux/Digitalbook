@@ -1,0 +1,15 @@
+{
+  "slug": "feature-name",
+  "title": "Feature Name",
+  "status": "go-live",
+  "releaseDate": "Jan 2026",
+  "goal": "Describe the goal of this feature.",
+  "description": "Describe what the feature does and its impact.",
+  "tags": [],
+  "regions": [],
+  "platforms": [],
+  "images": [],
+  "owner": "",
+  "jiraLink": "",
+  "docsLink": ""
+}

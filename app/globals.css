@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* ============================================
+   Avolta Digital Book — Design System Tokens
+   Extracted from Figma: BKwFVMKiwQ9KW9HkWJnF2z
+   ============================================ */
+
+/* Saans font — self-hosted */
+@font-face {
+  font-family: 'Saans';
+  src: url('/fonts/Avolta Saans/Saans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saans';
+  src: url('/fonts/Avolta Saans/Saans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saans';
+  src: url('/fonts/Avolta Saans/Saans-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  /* Font family */
+  --font-sans: 'Saans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Core colors */
+  --color-night: #252525;
+  --color-night-20: #525252;
+  --color-night-40: #7D7D7D;
+  --color-night-60: #A8A8A8;
+  --color-night-80: #D4D4D4;
+  --color-sand: #F5F3ED;
+  --color-sand-light: #FAF8F5;
+  --color-day: #FFFFFF;
+  --color-day-20: #F4F4F4;
+
+  /* Accent colors */
+  --color-sun: #ED8A40;
+  --color-sun-light: #FF903E;
+  --color-sun-bg: #FFE9D8;
+  --color-sun-bg-light: #FDF3EC;
+  --color-primary: #8F53F0;
+  --color-primary-bg: #F3EDFD;
+
+  /* Section colors */
+  --color-section-website-rc: #ED8A40;
+  --color-section-club-avolta: #8F53F0;
+  --color-section-oms: #00897B;
+  --color-section-sso: #616161;
+  --color-section-autogrill: #C62828;
+  --color-section-audio: #4D0FB1;
+
+  /* Dark theme tokens (for dark cards & panels) */
+  --color-panel-dark: #323232;
+  --color-card-dark: #252525;
+  --color-tag-dark: #171717;
+
+  /* Typography scale */
+  --font-size-h1: 36px;
+  --line-height-h1: 44px;
+  --tracking-h1: -0.5px;
+
+  --font-size-h2: 30px;
+  --line-height-h2: 38px;
+  --tracking-h2: -0.25px;
+
+  --font-size-h3: 24px;
+  --line-height-h3: 32px;
+  --tracking-h3: -0.25px;
+
+  --font-size-h4: 20px;
+  --line-height-h4: 28px;
+
+  --font-size-body: 16px;
+  --line-height-body: 24px;
+
+  --font-size-body-sm: 14px;
+  --line-height-body-sm: 22px;
+
+  --font-size-body-xs: 13px;
+  --line-height-body-xs: 18px;
+
+  /* Border radii from Figma */
+  --radius-card: 42px;
+  --radius-card-mobile: 32px;
+  --radius-image: 28px;
+  --radius-panel: 16px;
+  --radius-tag: 33.902px;
+  --radius-button: 12px;
+
+  /* Spacing */
+  --spacing-page: 64px;
+  --spacing-page-mobile: 20px;
+  --spacing-section: 48px;
+  --spacing-card: 40px;
+  --spacing-card-mobile: 24px;
+}
+
+/* Base styles */
+body {
+  background-color: var(--color-sand);
+  color: var(--color-night);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Typography utilities */
+.text-h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  letter-spacing: var(--tracking-h1);
+  font-weight: 600;
+}
+
+.text-h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  letter-spacing: var(--tracking-h2);
+  font-weight: 600;
+}
+
+.text-h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  letter-spacing: var(--tracking-h3);
+  font-weight: 600;
+}
+
+.text-h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.text-body-sm {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body-sm);
+}
+
+.text-body-xs {
+  font-size: var(--font-size-body-xs);
+  line-height: var(--line-height-body-xs);
+}
+
+/* Responsive card utilities */
+.card-radius {
+  border-radius: var(--radius-card-mobile);
+}
+@media (min-width: 768px) {
+  .card-radius {
+    border-radius: var(--radius-card);
+  }
+}
+
+.card-padding {
+  padding: var(--spacing-card-mobile);
+}
+@media (min-width: 768px) {
+  .card-padding {
+    padding: var(--spacing-card);
+  }
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(143, 83, 240, 0.15);
+}
+
+/* Focus visible styling */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

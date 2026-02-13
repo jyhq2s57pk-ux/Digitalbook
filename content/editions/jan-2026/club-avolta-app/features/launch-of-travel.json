@@ -1,0 +1,12 @@
+{
+  "slug": "launch-of-travel",
+  "title": "Launch of Travel",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Empower users to personalize their marketing communications at a granular level to ensure we contact them on their preferred channels",
+  "description": "With enhanced marketing preferences, users can set and adjust their marketing choices with greater detail and flexibility. This ensures communication remains relevant and aligned with individual user interests and needs.",
+  "tags": ["travel", "booking"],
+  "regions": ["Global"],
+  "platforms": ["Club Avolta App"],
+  "images": ["/images/jan-2026/club-avolta-app/launch-of-travel.png"]
+}
