@@ -225,36 +225,19 @@ export default function AudioPlayerCard({
           </div>
         </div>
 
-        {/* Copy Link Button */}
-        <button
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-white/10 transition-colors"
-          style={{ color: secondaryTextColor }}
-          title="Copy link"
-        >
-          <LinkIcon />
-        </button>
       </div>
 
       {/* Mobile Layout */}
       <div className="flex md:hidden flex-col gap-4">
         {/* Header: Logo and Language */}
-        <div className="flex items-start justify-between">
-          <div className="flex flex-col gap-1">
-            <AudioDigestLogo size="small" />
-            <span
-              className="text-[14px] leading-[18px]"
-              style={{ color: textColor }}
-            >
-              {languageFlag} {language}
-            </span>
-          </div>
-          <button
-            className="p-2 rounded-full hover:bg-white/10 transition-colors"
-            style={{ color: secondaryTextColor }}
-            title="Copy link"
+        <div className="flex flex-col gap-1">
+          <AudioDigestLogo size="small" />
+          <span
+            className="text-[14px] leading-[18px]"
+            style={{ color: textColor }}
           >
-            <LinkIcon size={16} />
-          </button>
+            {languageFlag} {language}
+          </span>
         </div>
 
         {/* Controls */}
@@ -382,15 +365,6 @@ function NextIcon({ size = 16 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
       <path d="M6 18l8.5-6L6 6v12zm8.5-6V6h2v12h-2V12z"/>
-    </svg>
-  );
-}
-
-function LinkIcon({ size = 18 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
     </svg>
   );
 }
