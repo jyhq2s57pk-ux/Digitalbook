@@ -104,6 +104,15 @@ export default function MobileNav({
               );
             })}
           </div>
+
+          {/* Avolta logo */}
+          <div className="flex justify-end pt-4 pb-2">
+            <img
+              src="/avoltalogo-white.svg"
+              alt="Avolta"
+              className="h-[20px] w-auto opacity-80"
+            />
+          </div>
         </div>
       </div>
     </div>
