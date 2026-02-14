@@ -5,18 +5,29 @@ import type { Feature } from '@/lib/types';
 
 interface ContentsPanelProps {
   sectionTitle: string;
-  sectionColor: string;
+  sectionSlug: string;
   features: Feature[];
   activeFeatureSlug?: string | null;
 }
 
+// Color mapping from home page buttons - outer (LIGHTER) and inner (DARKER/saturated) colors
+const sectionColors: Record<string, { outer: string; inner: string }> = {
+  'website-rc': { outer: '#f4b98c', inner: '#dc6b14' },
+  'club-avolta-app': { outer: '#bb97f6', inner: '#8f53f0' },
+  'oms': { outer: '#5ae0c9', inner: '#198674' },
+  'sso': { outer: '#cccccc', inner: '#777777' },
+  'my-autogrill': { outer: '#eb707c', inner: '#d61f31' },
+  'audio-digest': { outer: '#c4a3f7', inner: '#8a38f5' },
+};
+
 export default function ContentsPanel({
   sectionTitle,
-  sectionColor,
+  sectionSlug,
   features,
 }: ContentsPanelProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const showTwoColumns = features.length > 8;
+  const colors = sectionColors[sectionSlug] || { outer: '#e0e0e0', inner: '#666666' };
 
   const scrollToFeature = useCallback((slug: string) => {
     setIsExpanded(false);
@@ -49,10 +60,12 @@ export default function ContentsPanel({
           className="w-full flex items-center justify-between px-4 md:px-5 py-3 md:py-4 text-left"
         >
           <div className="flex items-center gap-3">
-            {/* Section color indicator */}
+            {/* Section color indicator - two-tone pill */}
             <div
-              className="w-1 h-5 rounded-full"
-              style={{ backgroundColor: sectionColor }}
+              className="w-2 h-6 rounded-full"
+              style={{
+                background: `linear-gradient(180deg, ${colors.outer} 0%, ${colors.inner} 100%)`,
+              }}
             />
             <span className="text-[15px] md:text-[16px] font-medium text-[#252525]">
               {sectionTitle}

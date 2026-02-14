@@ -6,7 +6,7 @@ import type { Feature } from '@/lib/types';
 
 interface SectionScrollWrapperProps {
   sectionTitle: string;
-  sectionColor: string;
+  sectionSlug: string;
   features: Feature[];
 }
 
@@ -17,7 +17,7 @@ interface SectionScrollWrapperProps {
  */
 export default function SectionScrollWrapper({
   sectionTitle,
-  sectionColor,
+  sectionSlug,
   features,
 }: SectionScrollWrapperProps) {
   const featureSlugs = features.map((f) => f.slug);
@@ -26,7 +26,7 @@ export default function SectionScrollWrapper({
   return (
     <ContentsPanel
       sectionTitle={sectionTitle}
-      sectionColor={sectionColor}
+      sectionSlug={sectionSlug}
       features={features}
       activeFeatureSlug={activeFeatureSlug}
     />

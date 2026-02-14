@@ -38,7 +38,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
         {/* Contents Panel - collapsible */}
         <ContentsPanel
           sectionTitle={section.title}
-          sectionColor={section.color}
+          sectionSlug={sectionSlug}
           features={section.features}
         />
 
