@@ -308,13 +308,14 @@ export default function AudioPlayerCard({
 
 // Icon Components
 function AudioDigestLogo({ size = 'normal' }: { size?: 'small' | 'normal' }) {
-  const height = size === 'small' ? 17 : 22;
+  // Original sizes: small=17, normal=22, reduced by 40%
+  const height = size === 'small' ? 10 : 13;
 
   return (
     <img
       src="/audiodigestlogo-white.svg"
       alt="AudioDigest"
-      style={{ height: `${height}px`, width: 'auto' }}
+      style={{ height: `${height}px`, width: 'auto', opacity: 0.8 }}
     />
   );
 }
