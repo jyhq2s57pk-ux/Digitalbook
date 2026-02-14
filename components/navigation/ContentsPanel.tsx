@@ -47,17 +47,15 @@ export default function ContentsPanel({
 
   return (
     <div className="w-full max-w-[1100px] mx-auto sticky top-[90px] lg:top-[88px] z-30">
-      {/* Panel container */}
-      <div
-        className="bg-white rounded-[16px] overflow-hidden transition-all duration-300 ease-out"
-        style={{
-          boxShadow: '0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)',
-        }}
-      >
-        {/* Header bar - always visible */}
+      {/* Panel container - relative for dropdown positioning */}
+      <div className="relative">
+        {/* Header bar - always visible, fixed height */}
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full flex items-center justify-between px-4 md:px-5 py-3 md:py-4 text-left"
+          className="w-full flex items-center justify-between px-4 md:px-5 py-3 md:py-4 text-left bg-white rounded-[16px]"
+          style={{
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)',
+          }}
         >
           <div className="flex items-center gap-3">
             {/* Section color indicator - two-tone pill */}
@@ -93,17 +91,19 @@ export default function ContentsPanel({
           </div>
         </button>
 
-        {/* Expandable content */}
+        {/* Expandable dropdown - absolutely positioned to overlay content */}
         <div
-          className="overflow-hidden transition-all duration-300 ease-out"
+          className="absolute top-full left-0 right-0 mt-2 bg-white rounded-[16px] overflow-hidden transition-all duration-300 ease-out"
           style={{
-            maxHeight: isExpanded ? '500px' : '0px',
+            boxShadow: isExpanded ? '0 4px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06)' : 'none',
             opacity: isExpanded ? 1 : 0,
+            visibility: isExpanded ? 'visible' : 'hidden',
+            transform: isExpanded ? 'translateY(0)' : 'translateY(-8px)',
           }}
         >
-          <div className="px-4 md:px-5 pb-4 md:pb-5 border-t border-[#f0f0f0]">
+          <div className="px-4 md:px-5 py-4 md:py-5">
             <nav
-              className={`pt-4 flex flex-col gap-2.5 ${
+              className={`flex flex-col gap-2.5 ${
                 showTwoColumns ? 'lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-2.5' : ''
               }`}
             >
