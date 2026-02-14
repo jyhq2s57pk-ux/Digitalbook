@@ -62,7 +62,7 @@ export default function ContentsPanel({
           <div className="flex items-center gap-3">
             {/* Section color indicator - two-tone pill */}
             <div
-              className="w-2 h-6 rounded-full"
+              className="w-1.5 h-5 rounded-full"
               style={{
                 background: `linear-gradient(180deg, ${colors.outer} 0%, ${colors.inner} 100%)`,
               }}
