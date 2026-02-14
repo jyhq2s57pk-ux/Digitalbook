@@ -64,10 +64,11 @@ export default function SectionNavCard({
         >
           {/* AudioDigest logo lockup */}
           <div className="flex flex-col items-center gap-1.5 md:gap-2">
-            <div className="flex items-center gap-1">
-              <span className="text-white text-[13px] md:text-[16px] font-medium">((()))</span>
-              <span className="text-white text-[13px] md:text-[16px] font-semibold tracking-wide">AudioDigest</span>
-            </div>
+            <img
+              src="/audiodigestlogo-white.svg"
+              alt="AudioDigest"
+              className="h-[16px] md:h-[20px] w-auto"
+            />
             <span className="text-white text-[13px] text-center">Play now</span>
           </div>
         </div>

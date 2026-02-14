@@ -1,0 +1,29 @@
+{
+  "podcasts": [
+    {
+      "language": "English",
+      "flag": "🇬🇧",
+      "audioSrc": "/audio/feb-2026-english.mp3"
+    },
+    {
+      "language": "Italian",
+      "flag": "🇮🇹",
+      "audioSrc": "/audio/feb-2026-italian.mp3"
+    },
+    {
+      "language": "Spanish",
+      "flag": "🇪🇸",
+      "audioSrc": "/audio/feb-2026-spanish.mp3"
+    },
+    {
+      "language": "French",
+      "flag": "🇫🇷",
+      "audioSrc": "/audio/feb-2026-french.mp3"
+    },
+    {
+      "language": "German",
+      "flag": "🇩🇪",
+      "audioSrc": "/audio/feb-2026-german.mp3"
+    }
+  ]
+}

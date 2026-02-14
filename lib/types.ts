@@ -48,3 +48,13 @@ export interface SectionConfig {
   color: string;
   order: number;
 }
+
+export interface AudioPodcast {
+  language: string;
+  flag: string;
+  audioSrc: string;
+}
+
+export interface AudioDigestContent {
+  podcasts: AudioPodcast[];
+}

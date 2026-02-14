@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import type { Edition, Section, Feature } from './types';
+import type { Edition, Section, Feature, AudioDigestContent } from './types';
 import { SECTIONS, parseEditionSlug } from './constants';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content/editions');
@@ -124,4 +124,23 @@ export function getAllSectionParams() {
   }
 
   return params;
+}
+
+// Load audio digest content for an edition
+export function getAudioDigestContent(editionSlug: string): AudioDigestContent {
+  const audioDigestDir = path.join(CONTENT_DIR, editionSlug, 'audio-digest');
+  const audioDigestFile = path.join(audioDigestDir, 'audio-digest.json');
+
+  if (!fs.existsSync(audioDigestFile)) {
+    // Return default empty structure
+    return {
+      podcasts: [],
+    };
+  }
+
+  const data = JSON.parse(fs.readFileSync(audioDigestFile, 'utf-8'));
+
+  return {
+    podcasts: data.podcasts || [],
+  };
 }
