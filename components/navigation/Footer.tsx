@@ -39,11 +39,11 @@ export default function Footer({ edition }: FooterProps) {
           {/* Right: Avolta branding + date */}
           <div className="flex flex-col items-center md:items-end gap-[14px] md:gap-[14px]">
             {/* Avolta logo */}
-            <div className="flex items-center gap-1">
-              <span className="text-white text-[20px] md:text-[24px] font-semibold tracking-wide">
-                ((())) Avolta
-              </span>
-            </div>
+            <img
+              src="/avoltalogo-white.svg"
+              alt="Avolta"
+              className="h-[24px] md:h-[28px] w-auto"
+            />
             {/* Edition date */}
             <span className="text-white text-[13px] font-medium leading-[18px]">
               {formattedDate}

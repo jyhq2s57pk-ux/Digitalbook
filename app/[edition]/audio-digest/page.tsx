@@ -123,17 +123,6 @@ export default async function AudioDigestPage({ params }: AudioDigestPageProps) 
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="w-full py-8 px-6 md:px-8">
-        <div className="max-w-[705px] mx-auto flex justify-end">
-          <img
-            src="/avoltalogo.svg"
-            alt="Avolta"
-            className="h-[24px] md:h-[28px] w-auto opacity-80"
-          />
-        </div>
-      </footer>
     </div>
   );
 }
