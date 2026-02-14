@@ -1,0 +1,12 @@
+{
+  "slug": "personalized-recommendations",
+  "title": "Personalized Recommendations",
+  "status": "in-development",
+  "releaseDate": "Mar. 2026",
+  "goal": "Increase average basket size through AI-driven product suggestions tailored to individual preferences",
+  "description": "Machine learning algorithms analyze purchase history, browsing behavior, and travel patterns to surface relevant product recommendations. Users see personalized suggestions on the home screen and during checkout.",
+  "tags": ["AI", "personalization"],
+  "regions": ["Global"],
+  "platforms": ["Club Avolta App", "Website"],
+  "images": []
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "category-images-update",
+  "title": "Shopping - Category Images Update",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Ensure all app category images are updated across all locations in alignment with the Value Club campaign.",
+  "description": "We are updating all category images in the app across every location to align with the Value Club campaign during the first quarter of 2026. This update will ensure visual consistency and fully support the campaign rollout.",
+  "tags": ["content", "campaign", "images"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": []
+}

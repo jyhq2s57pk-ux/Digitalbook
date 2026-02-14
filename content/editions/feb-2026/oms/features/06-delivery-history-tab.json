@@ -1,0 +1,12 @@
+{
+  "slug": "delivery-history-tab",
+  "title": "Delivery History Tab in Order Details",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Track the Delivery statuses and Delivery location for an order.",
+  "description": "OMS would track the different delivery statuses that has been selected by the OMS staff for an order. This is to make sure that the users are following the correct process when a Locker delivery is requested as an example and the steps that are taken by the staff to move the order to a locker. This would also track the user who has performed the action so this would be a form of Audit trail.",
+  "tags": ["smart lockers", "audit trail", "delivery"],
+  "regions": ["Global"],
+  "platforms": ["OMS"],
+  "images": []
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "loyalty-tiers-salesforce",
+  "title": "Loyalty Tiers Dynamically Received from Salesforce",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Receive Club Avolta customer tiers dynamically from Salesforce for Non-ADV promotion.",
+  "description": "This feature is to receive the Club Avolta member tiers from Salesforce directly instead of keeping a static list. This would be helpful in setting up the correct Non ADV promotions for the tiers that are present.",
+  "tags": ["Salesforce", "loyalty", "promotions"],
+  "regions": ["Global"],
+  "platforms": ["OMS"],
+  "images": []
+}

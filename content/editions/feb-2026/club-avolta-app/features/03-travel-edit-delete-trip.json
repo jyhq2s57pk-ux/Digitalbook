@@ -1,0 +1,12 @@
+{
+  "slug": "travel-edit-delete-trip",
+  "title": "Travel Edit/Delete Trip",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Enable users to edit trip dates within the app.",
+  "description": "This feature allows users to easily update their trip date in the app if their flight has been rescheduled. By providing the flexibility to edit trip dates, we help users keep their travel plans current and organized.",
+  "tags": ["travel", "trips"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": []
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "digital-receipts",
+  "title": "Digital Receipts",
+  "status": "go-live",
+  "releaseDate": "Jan. 2026",
+  "goal": "Reduce paper waste and provide customers with easy access to their purchase history",
+  "description": "All in-store purchases are automatically linked to member accounts with digital receipts stored in the app. Users can search, filter, and export receipts for expense reporting.",
+  "tags": ["receipts", "sustainability"],
+  "regions": ["EMEA", "APAC"],
+  "platforms": ["Club Avolta App"],
+  "images": []
+}

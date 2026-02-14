@@ -1,0 +1,12 @@
+{
+  "slug": "brand-boutiques-normalization",
+  "title": "Global Normalization of Brand Boutiques",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Ensure consistency and standardization of Brand Boutiques across all divisions and regions.",
+  "description": "Conduct a comprehensive review of all active Brand Boutiques to establish a clear, up-to-date snapshot by division. Identify and assess version discrepancies, including inconsistencies or parallel versions of the same Brand Boutique across regions. Drive close alignment and collaboration with Emotion+ and the brands to harmonize layouts, content structures, and asset usage. Define and implement a global versus regional standardization strategy, prioritizing global consistency wherever feasible, while ensuring strong regional coherence when full global alignment is not achievable.",
+  "tags": ["brand boutiques", "standardization"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect", "Emporium"],
+  "images": []
+}

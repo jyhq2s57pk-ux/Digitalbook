@@ -1,0 +1,12 @@
+{
+  "slug": "search-brand-filter",
+  "title": "Search: Brand Filter Activation",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Enable users to refine search results more efficiently by introducing a Brand Filter on the results page, improving product discoverability and overall search relevance.",
+  "description": "We implemented a new Brand Filter within the search results page to deliver a more intuitive and personalized browsing experience. This enhancement allows users to quickly narrow down results based on their preferred brands, reducing search friction and increasing engagement with relevant products.",
+  "tags": ["search", "filters"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect", "Emporium"],
+  "images": []
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "wallet-integration",
+  "title": "Apple & Google Wallet Integration",
+  "status": "go-live",
+  "releaseDate": "Jan. 2026",
+  "goal": "Simplify the checkout experience with one-tap payments and loyalty card storage",
+  "description": "Members can add their Club Avolta loyalty card to Apple Wallet or Google Pay for instant identification at checkout. Combined with saved payment methods, purchases complete in seconds.",
+  "tags": ["payments", "wallet"],
+  "regions": ["Global"],
+  "platforms": ["Club Avolta App"],
+  "images": []
+}

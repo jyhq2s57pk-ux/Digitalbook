@@ -2,8 +2,7 @@ import { getEdition, getSection, getAllSectionParams } from '@/lib/content';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import FeatureCard from '@/components/feature/FeatureCard';
-import SectionScrollWrapper from '@/components/navigation/SectionScrollWrapper';
-import PrevNextNav from '@/components/navigation/PrevNextNav';
+import ContentsPanel from '@/components/navigation/ContentsPanel';
 
 interface SectionPageProps {
   params: Promise<{ edition: string; section: string }>;
@@ -33,57 +32,35 @@ export default async function SectionPage({ params }: SectionPageProps) {
   }
 
   return (
-    <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 py-8">
-      {/* Two-column layout: sidebar + feature cards */}
-      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-        {/* Left column: Contents Panel with scrollspy (sticky on desktop) */}
-        <aside className="lg:w-[280px] xl:w-[320px] shrink-0">
-          <div className="lg:sticky lg:top-[84px]">
-            <SectionScrollWrapper
-              sectionTitle={section.title}
-              sectionColor={section.color}
-              features={section.features}
-            />
-          </div>
-        </aside>
+    <div className="bg-sand min-h-screen">
+      {/* Main content area */}
+      <div className="flex flex-col gap-[32px] md:gap-[51px] items-center pt-[80px] md:pt-[95px] pb-[100px] md:pb-[200px] px-4 md:px-10">
+        {/* Contents Panel - collapsible */}
+        <ContentsPanel
+          sectionTitle={section.title}
+          sectionColor={section.color}
+          features={section.features}
+        />
 
-        {/* Right column: Feature Cards */}
-        <main className="flex-1 min-w-0">
-          {/* Section summary */}
-          {section.summary && (
-            <p className="text-body text-night-20 max-w-[600px] mb-8">
-              {section.summary}
+        {/* Feature Cards */}
+        {section.features.length === 0 ? (
+          <div className="w-full max-w-[1100px] bg-white rounded-[32px] md:rounded-[42px] p-8 text-center">
+            <p className="text-body text-night-40">
+              No features in this section yet.
             </p>
-          )}
-
-          {/* Feature Cards */}
-          <div className="flex flex-col gap-6">
-            {section.features.length === 0 ? (
-              <div className="bg-white card-radius p-10 text-center">
-                <p className="text-body text-night-40">
-                  No features in this section yet.
-                </p>
-              </div>
-            ) : (
-              section.features.map((feature, index) => (
-                <FeatureCard
-                  key={feature.slug}
-                  feature={feature}
-                  variant={index % 2 === 0 ? 'light' : 'dark'}
-                  editionSlug={editionSlug}
-                  sectionSlug={sectionSlug}
-                />
-              ))
-            )}
           </div>
-
-          {/* Previous / Next section navigation */}
-          <PrevNextNav
-            editionSlug={editionSlug}
-            sections={edition.sections}
-            currentSectionSlug={sectionSlug}
-          />
-        </main>
+        ) : (
+          section.features.map((feature, index) => (
+            <div key={feature.slug} className="w-full max-w-[1100px]">
+              <FeatureCard
+                feature={feature}
+                variant={index % 2 === 0 ? 'light' : 'dark'}
+                editionSlug={editionSlug}
+                sectionSlug={sectionSlug}
+              />
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

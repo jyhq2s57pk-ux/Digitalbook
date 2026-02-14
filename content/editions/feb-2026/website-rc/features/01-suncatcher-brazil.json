@@ -1,0 +1,12 @@
+{
+  "slug": "suncatcher-brazil",
+  "title": "Suncatcher for Brazil",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Enable customers at Guarulhos Brazil to virtually try on selected sunglasses using the Mirrar tool, enhancing the shopping experience and driving engagement with featured products.",
+  "description": "mirrAr Virtual Try-On will be integrated into our platform, allowing users to visualize how selected sunglasses look on them, directly from the product detail page. Only specific SKUs, pre-identified through unique attributes in Akeneo, will be compatible with this feature. The backend utilizes these Akeneo attributes to dynamically display the virtual try-on option only for eligible products. With this tool, customers can either upload an image from their gallery or use their device's camera to try on the sunglasses in real-time.",
+  "tags": ["virtual try-on", "AR"],
+  "regions": ["Brazil"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": []
+}

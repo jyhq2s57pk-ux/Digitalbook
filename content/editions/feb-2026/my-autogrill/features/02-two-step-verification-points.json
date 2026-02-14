@@ -1,0 +1,12 @@
+{
+  "slug": "two-step-verification-points",
+  "title": "Two-Step Verification for Point Transfers",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "To safeguard the \"digital currency\" of our loyalty program and prevent fraudulent or accidental point donations. By adding a mandatory confirmation layer, we provide users with full control over their balance and ensure that point transfers are intentional, verified, and secure.",
+  "description": "We are introducing a 2-Step Verification (2SV) process for the \"Donate Points\" feature. Whenever a user initiates a transfer to another account, the system will trigger an automated security email containing a unique, time-sensitive confirmation link. The transaction will remain in a \"pending\" state and will only be finalized once the user clicks the link, providing a critical safety net against unauthorized account activity.",
+  "tags": ["security", "2FA", "loyalty"],
+  "regions": ["Italy"],
+  "platforms": ["My Autogrill"],
+  "images": []
+}

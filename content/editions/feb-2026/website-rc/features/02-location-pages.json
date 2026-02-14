@@ -1,0 +1,12 @@
+{
+  "slug": "location-pages",
+  "title": "Location Pages",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Displaying F&B locations on the web enhances brand visibility and helps users discover Avolta stores more easily. It builds on the momentum of showcasing rewards and restaurant benefits in the Club Avolta banner, driving engagement and increasing footfall through digital awareness.",
+  "description": "In a very simple way and filtering by country and airport, customers will be able to see all the F&B options we offer at Avolta. We offer three types of experiences: Stores, Dining, and Events. Within each of these cards, the customer can see more detailed information.",
+  "tags": ["F&B", "locations"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": []
+}

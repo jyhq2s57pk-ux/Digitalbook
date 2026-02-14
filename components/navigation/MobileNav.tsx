@@ -12,12 +12,21 @@ interface MobileNavProps {
   currentSectionSlug?: string;
 }
 
+// Border colors for each section (from Figma)
+const sectionBorderColors: Record<string, string> = {
+  'website-rc': '#ed8a40',
+  'club-avolta-app': '#8f53f0',
+  'oms': '#30d7ba',
+  'my-autogrill': '#e54c5c',
+  'sso': '#6a6a6a',
+  'audio-digest': '#6a6a6a',
+};
+
 export default function MobileNav({
   isOpen,
   onClose,
   sections,
   editionSlug,
-  currentSectionSlug,
 }: MobileNavProps) {
   // Lock body scroll when nav is open
   useEffect(() => {
@@ -45,24 +54,17 @@ export default function MobileNav({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50">
-      {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-night/80 backdrop-blur-sm"
-        onClick={onClose}
-        aria-hidden="true"
-      />
-
-      {/* Panel */}
-      <nav
-        className="absolute inset-y-0 right-0 w-full max-w-[320px] bg-night p-8 flex flex-col"
-        role="dialog"
-        aria-label="Navigation menu"
-      >
-        {/* Close button */}
+    <div className="fixed inset-x-0 top-0 z-50 bg-night rounded-b-[32px] overflow-hidden">
+      {/* Top bar with logo and close button */}
+      <nav className="flex items-center justify-between p-5 h-[60px] backdrop-blur-[10px]">
+        <img
+          src="/db-logo-white.svg"
+          alt="Digital Book"
+          className="h-[32px] w-auto"
+        />
         <button
           onClick={onClose}
-          className="self-end w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors mb-8"
+          className="w-6 h-6 flex items-center justify-center text-white hover:text-white/80 transition-colors"
           aria-label="Close menu"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -70,43 +72,40 @@ export default function MobileNav({
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
-
-        {/* Section links */}
-        <div className="flex flex-col gap-1">
-          {sections.map((section) => {
-            const isActive = currentSectionSlug === section.slug;
-            return (
-              <Link
-                key={section.slug}
-                href={`/${editionSlug}/${section.slug}`}
-                onClick={onClose}
-                className={`flex items-center gap-3 px-4 py-3 rounded-[var(--radius-button)] transition-colors ${
-                  isActive
-                    ? 'bg-white/10 text-white'
-                    : 'text-white/70 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                <span
-                  className="w-2.5 h-2.5 rounded-full shrink-0"
-                  style={{ backgroundColor: section.color }}
-                />
-                <span className="text-body">{section.title}</span>
-              </Link>
-            );
-          })}
-        </div>
-
-        {/* Home link at bottom */}
-        <div className="mt-auto pt-8 border-t border-white/10">
-          <Link
-            href={`/${editionSlug}`}
-            onClick={onClose}
-            className="text-body-sm text-white/60 hover:text-white transition-colors"
-          >
-            ← Back to overview
-          </Link>
-        </div>
       </nav>
+
+      {/* Dropdown content */}
+      <div className="px-4 pt-2 pb-[18px]">
+        <div className="bg-[rgba(37,37,37,0.92)] rounded-[32px] px-4 py-2.5">
+          {/* Section links as bordered cards */}
+          <div className="flex flex-col gap-5 py-2">
+            {sections.map((section) => {
+              const borderColor = sectionBorderColors[section.slug] || '#6a6a6a';
+              const isAudioDigest = section.slug === 'audio-digest';
+
+              return (
+                <Link
+                  key={section.slug}
+                  href={`/${editionSlug}/${section.slug}`}
+                  onClick={onClose}
+                  className="flex items-center justify-between p-4 rounded-[12px] border-[1.5px] transition-colors hover:bg-white/5"
+                  style={{ borderColor }}
+                >
+                  {isAudioDigest ? (
+                    <span className="text-white text-[16px] font-medium">
+                      ((())) AudioDigest
+                    </span>
+                  ) : (
+                    <span className="text-white text-[16px] leading-[24px]">
+                      {section.title}
+                    </span>
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

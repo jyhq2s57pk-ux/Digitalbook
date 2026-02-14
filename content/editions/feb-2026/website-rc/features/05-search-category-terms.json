@@ -1,0 +1,12 @@
+{
+  "slug": "search-category-terms",
+  "title": "Search: Category Terms Redirection - POC",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Improve search relevance by redirecting top-searched category-related terms to their corresponding Category subcategories in English, Spanish, and Brazilian Portuguese.",
+  "description": "We identified key search terms that strongly correlate with existing product categories across English, Spanish, and Brazilian Portuguese. To enhance user navigation and product discovery, each of these terms will now redirect directly to the appropriate Category Product Listing Page (PLP). This ensures users land on highly relevant results curated by best-selling products. We will continue monitoring the performance of these redirects, and if the impact proves positive, we will move forward with automating this process for additional terms and languages.",
+  "tags": ["search", "navigation", "POC"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": []
+}

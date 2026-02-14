@@ -36,6 +36,18 @@ export const STATUS_CONFIG: Record<FeatureStatus, { label: string; dotColor: str
     bgColor: '#E3F2FD',
     textColor: '#252525',
   },
+  'in-development': {
+    label: 'In development',
+    dotColor: '#F9A825',
+    bgColor: '#FFFDE7',
+    textColor: '#252525',
+  },
+  'planned': {
+    label: 'Planned',
+    dotColor: '#9E9E9E',
+    bgColor: '#F5F5F5',
+    textColor: '#252525',
+  },
 };
 
 // Month slug parsing helper

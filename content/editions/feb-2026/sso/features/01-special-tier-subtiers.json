@@ -1,0 +1,12 @@
+{
+  "slug": "special-tier-subtiers",
+  "title": "Special Tier Administration - Subtiers on Regular Tiers",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Modify the Special Tier Administration to permit subtiers on \"Normal\" tiers.",
+  "description": "This feature aims to solve the problem of onboarding accounts where it is desirable to retain the original 'normal tier' (primary tier) and to NOT upgrade/cross-grade them to Partner Tier.",
+  "tags": ["tiers", "administration"],
+  "regions": ["Global"],
+  "platforms": ["SSO"],
+  "images": []
+}

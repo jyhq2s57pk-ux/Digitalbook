@@ -1,0 +1,12 @@
+{
+  "slug": "flight-integration",
+  "title": "Flight Integration",
+  "status": "planned",
+  "releaseDate": "Q2 2026",
+  "goal": "Provide contextual shopping experiences based on real-time flight information",
+  "description": "Integration with airline APIs enables the app to detect boarding passes, track flight status, and adjust offers based on destination, layover duration, and gate location. Push notifications guide travelers to relevant stores.",
+  "tags": ["flights", "context"],
+  "regions": ["Global"],
+  "platforms": ["Club Avolta App"],
+  "images": []
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "makeup-selector-vto",
+  "title": "Make Up Selector (VTO)",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Offering a Virtual Try-On (VTO) entry point for makeup bundles enhances the shopping experience, encouraging larger purchases and increasing average order value.",
+  "description": "This new feature allows clients to try Make up in real time using augmented reality, making it easier to choose the perfect shade without risk of error, increasing confidence in their purchase and saving time. This technology increases sales and personalizes the experience by showing them how the product looks.",
+  "tags": ["virtual try-on", "AR", "makeup"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": []
+}

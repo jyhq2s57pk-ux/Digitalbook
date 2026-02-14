@@ -1,0 +1,12 @@
+{
+  "slug": "store-locator",
+  "title": "Interactive Store Locator",
+  "status": "go-live",
+  "releaseDate": "Jan. 2026",
+  "goal": "Help travelers quickly find stores and products within airport terminals",
+  "description": "An interactive map shows all Avolta retail locations with real-time walking directions. Filter by product category, brand, or current promotions. Indoor positioning provides turn-by-turn navigation in supported airports.",
+  "tags": ["navigation", "stores"],
+  "regions": ["Global"],
+  "platforms": ["Club Avolta App"],
+  "images": []
+}

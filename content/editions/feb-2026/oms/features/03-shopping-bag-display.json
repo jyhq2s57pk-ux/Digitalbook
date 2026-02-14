@@ -1,0 +1,12 @@
+{
+  "slug": "shopping-bag-display",
+  "title": "Display Shopping Bag Added to Order",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Differentiate Shopping bags from other items if added to an order.",
+  "description": "The purpose of this requirement is to identify the shopping bags that is/are added to an order. A new tag 'Shopping bag' has been added to differentiate the shopping bags with the regular items. Shopping bags could be added in any of the systems during the order creation such as App or Web, and on OMS this would be received, but displayed differently.",
+  "tags": ["shopping bags", "orders", "display"],
+  "regions": ["Global"],
+  "platforms": ["OMS"],
+  "images": []
+}

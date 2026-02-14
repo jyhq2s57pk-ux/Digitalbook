@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import type { Feature } from '@/lib/types';
 
 interface ContentsPanelProps {
@@ -14,76 +14,98 @@ export default function ContentsPanel({
   sectionTitle,
   sectionColor,
   features,
-  activeFeatureSlug,
 }: ContentsPanelProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const showTwoColumns = features.length > 8;
+
+  const scrollToFeature = useCallback((slug: string) => {
+    setIsExpanded(false);
+    // Wait for panel to collapse, then scroll smoothly
+    setTimeout(() => {
+      const element = document.getElementById(slug);
+      if (element) {
+        const offset = 140; // Header + collapsed panel + gap
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: 'smooth',
+        });
+      }
+    }, 300);
+  }, []);
 
   return (
-    <div
-      className="rounded-[var(--radius-panel)] p-3 w-full"
-      style={{ backgroundColor: 'var(--color-panel-dark)' }}
-    >
-      <div className="flex flex-col gap-3.5 pb-2">
-        {/* Header: Section badge + collapse toggle */}
-        <div className="flex items-center justify-between">
-          <div
-            className="rounded-[var(--radius-button)] px-3 py-[10px] h-[39px] flex items-center"
-            style={{ backgroundColor: sectionColor }}
-          >
-            <span className="text-body-sm text-white whitespace-nowrap">
+    <div className="w-full max-w-[1100px] mx-auto sticky top-[90px] lg:top-[88px] z-30">
+      {/* Panel container */}
+      <div
+        className="bg-white rounded-[16px] overflow-hidden transition-all duration-300 ease-out"
+        style={{
+          boxShadow: '0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)',
+        }}
+      >
+        {/* Header bar - always visible */}
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="w-full flex items-center justify-between px-4 md:px-5 py-3 md:py-4 text-left"
+        >
+          <div className="flex items-center gap-3">
+            {/* Section color indicator */}
+            <div
+              className="w-1 h-5 rounded-full"
+              style={{ backgroundColor: sectionColor }}
+            />
+            <span className="text-[15px] md:text-[16px] font-medium text-[#252525]">
               {sectionTitle}
             </span>
           </div>
 
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="w-[39px] h-[39px] flex items-center justify-center text-white/70 hover:text-white transition-colors"
-            aria-label={isExpanded ? 'Collapse contents' : 'Expand contents'}
-          >
+          {/* Up/Down arrow */}
+          <div className="w-8 h-8 flex items-center justify-center text-[#666] hover:text-[#252525] transition-colors">
             <svg
-              width="24"
-              height="24"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+              style={{
+                transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                transition: 'transform 0.3s ease-out',
+              }}
             >
               <polyline points="6 9 12 15 18 9" />
             </svg>
-          </button>
-        </div>
-
-        {/* Contents list */}
-        {isExpanded && (
-          <div className="flex flex-col gap-12 p-2">
-            <div className="flex flex-col gap-5">
-              <h3 className="text-white font-semibold text-body">
-                Contents
-              </h3>
-              <nav className="flex flex-col gap-5">
-                {features.map((feature) => {
-                  const isActive = activeFeatureSlug === feature.slug;
-                  return (
-                    <a
-                      key={feature.slug}
-                      href={`#${feature.slug}`}
-                      className={`text-body transition-colors duration-150 ${
-                        isActive
-                          ? 'text-white font-medium'
-                          : 'text-[#E7E7E7] hover:text-white'
-                      }`}
-                    >
-                      {feature.title}
-                    </a>
-                  );
-                })}
-              </nav>
-            </div>
           </div>
-        )}
+        </button>
+
+        {/* Expandable content */}
+        <div
+          className="overflow-hidden transition-all duration-300 ease-out"
+          style={{
+            maxHeight: isExpanded ? '500px' : '0px',
+            opacity: isExpanded ? 1 : 0,
+          }}
+        >
+          <div className="px-4 md:px-5 pb-4 md:pb-5 border-t border-[#f0f0f0]">
+            <nav
+              className={`pt-4 flex flex-col gap-2.5 ${
+                showTwoColumns ? 'lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-2.5' : ''
+              }`}
+            >
+              {features.map((feature) => (
+                <button
+                  key={feature.slug}
+                  onClick={() => scrollToFeature(feature.slug)}
+                  className="text-left text-[14px] md:text-[15px] leading-[22px] text-[#525252] hover:text-[#252525] transition-colors py-1.5"
+                >
+                  {feature.title}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
   );

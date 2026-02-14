@@ -1,0 +1,12 @@
+{
+  "slug": "click-and-collect",
+  "title": "Click & Collect",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Enable seamless omnichannel shopping by allowing customers to reserve products online for in-store pickup",
+  "description": "Customers can browse products, check real-time store inventory, and reserve items for collection at their departure airport. QR code confirmation ensures quick pickup at dedicated counters.",
+  "tags": ["omnichannel", "shopping"],
+  "regions": ["Europe"],
+  "platforms": ["Club Avolta App", "Website"],
+  "images": []
+}

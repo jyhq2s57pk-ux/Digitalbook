@@ -4,7 +4,9 @@ export type FeatureStatus =
   | 'go-live'
   | 'set-up-required'
   | 'sub-region-request'
-  | 'content-go-live-ongoing';
+  | 'content-go-live-ongoing'
+  | 'in-development'
+  | 'planned';
 
 export interface Feature {
   slug: string;

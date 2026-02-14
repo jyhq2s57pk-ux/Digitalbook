@@ -1,0 +1,12 @@
+{
+  "slug": "order-count-display",
+  "title": "Display Total Count of Fulfilled and Ordered",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Display the total count of fulfilled vs Ordered quantities.",
+  "description": "This feature would allow the OMS operations staff to check the total count of the items that are ordered. This would make it easier during the collection process, to quickly check the count of all the items across all the lines, instead of counting each item one by one.",
+  "tags": ["operations", "orders", "counting"],
+  "regions": ["Global"],
+  "platforms": ["OMS"],
+  "images": []
+}

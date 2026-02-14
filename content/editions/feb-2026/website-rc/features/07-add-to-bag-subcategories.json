@@ -1,0 +1,12 @@
+{
+  "slug": "add-to-bag-subcategories",
+  "title": "Add to Bag Simple Products from Subcategories",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Reduce friction in the browsing journey by enabling customers to add simple products to bag directly from the subcategory, minimising unnecessary clicks and improving conversion.",
+  "description": "After successful A/B test this feature introduces add to bag functionality on the web subcategories for simple products, allowing customers to add items to their bag without navigating to product page. This is the first phase of a broader Quickshop-style capability. Support for configurable products (e.g. size/colour selection with dynamic pricing) is planned for a future release. Carousels are not included in this phase (will be included in future release).",
+  "tags": ["add to bag", "quickshop", "conversion"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect", "Emporium"],
+  "images": []
+}

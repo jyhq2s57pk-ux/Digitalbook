@@ -1,0 +1,12 @@
+{
+  "slug": "shopping-bags-order-creation",
+  "title": "Add Shopping Bags in OMS During Order Creation",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Option to add Shopping bag to an order on OMS during the Order creation process.",
+  "description": "This request is mainly from Spain, but this could be extended to other locations where there is a need to allow the addition of Shopping bags to an order. These bags are identified using a different flag and it would make it easier for the Staff to add one or more shopping bags to an order.",
+  "tags": ["shopping bags", "orders"],
+  "regions": ["Global"],
+  "platforms": ["OMS"],
+  "images": []
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "otp-verification-registration",
+  "title": "Enable OTP Verification at Registration",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Amend SSO web page to enable OTP verification at registration.",
+  "description": "The aim of this feature is to improve security by adding another layer of validation of the email/phone number before registration.",
+  "tags": ["security", "OTP", "registration"],
+  "regions": ["Global"],
+  "platforms": ["SSO"],
+  "images": []
+}

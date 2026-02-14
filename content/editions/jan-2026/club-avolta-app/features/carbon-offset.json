@@ -1,0 +1,12 @@
+{
+  "slug": "carbon-offset",
+  "title": "Carbon Offset Calculator",
+  "status": "planned",
+  "releaseDate": "Q2 2026",
+  "goal": "Enable environmentally conscious travelers to offset their purchases' carbon footprint",
+  "description": "The app calculates the carbon footprint of purchases and offers one-tap offset options through certified climate projects. Members can track their total offset contributions and earn sustainability badges.",
+  "tags": ["sustainability", "carbon"],
+  "regions": ["Global"],
+  "platforms": ["Club Avolta App"],
+  "images": []
+}

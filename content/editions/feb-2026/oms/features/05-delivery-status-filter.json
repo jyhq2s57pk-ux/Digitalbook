@@ -1,0 +1,12 @@
+{
+  "slug": "delivery-status-filter",
+  "title": "Filter Orders Based on Delivery Statuses",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "Filter the order based on Delivery status on the orders Grid page.",
+  "description": "This feature is to allow the OMS user to quickly filter the orders based on the Delivery status. For example, if an order has been delivered to a locker, this could be checked directly on the Orders list page (orders grid page). It would make it easier for the operations team to reach a specific order efficiently.",
+  "tags": ["smart lockers", "filters", "delivery"],
+  "regions": ["Global"],
+  "platforms": ["OMS"],
+  "images": []
+}

@@ -15,7 +15,7 @@ export default function StatusPill({ status, releaseDate, variant = 'light' }: S
 
   return (
     <div
-      className="inline-flex items-center gap-[9px] rounded-full px-3 py-[10px] h-[34px]"
+      className="inline-flex items-center gap-[9px] rounded-full px-3 py-[10px] h-[34px] w-fit"
       style={{
         backgroundColor: isLight ? config.bgColor : 'var(--color-tag-dark)',
         borderColor: config.dotColor,
