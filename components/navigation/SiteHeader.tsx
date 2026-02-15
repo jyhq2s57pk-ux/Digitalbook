@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type { Section } from '@/lib/types';
 import MobileNav from './MobileNav';
 import { useHeader } from '@/contexts/HeaderContext';
@@ -21,6 +22,11 @@ export default function SiteHeader({
 }: SiteHeaderProps) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const { isHeaderVisible } = useHeader();
+  const pathname = usePathname();
+
+  // Extract current section from URL path (e.g., /feb-2026/club-avolta-app -> club-avolta-app)
+  const pathSegments = pathname.split('/').filter(Boolean);
+  const activeSectionSlug = currentSectionSlug || (pathSegments.length >= 2 ? pathSegments[1] : undefined);
 
   return (
     <>
@@ -48,7 +54,7 @@ export default function SiteHeader({
             {/* Center: Section pills (desktop) — white text on transparent */}
             <nav className="hidden lg:flex items-center gap-[3px] p-[3px] rounded-full">
               {sections.map((section) => {
-                const isActive = currentSectionSlug === section.slug;
+                const isActive = activeSectionSlug === section.slug;
                 return (
                   <Link
                     key={section.slug}
@@ -90,7 +96,7 @@ export default function SiteHeader({
         onClose={() => setMobileNavOpen(false)}
         sections={sections}
         editionSlug={editionSlug}
-        currentSectionSlug={currentSectionSlug}
+        currentSectionSlug={activeSectionSlug}
       />
     </>
   );
