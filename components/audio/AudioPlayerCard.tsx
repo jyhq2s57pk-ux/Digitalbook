@@ -1,53 +1,59 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 interface AudioPlayerCardProps {
   language: string;
-  languageFlag: string;
-  editionDate: string;
+  languageRegion?: string;
   audioSrc: string;
-  variant?: 'light' | 'dark';
 }
 
 export default function AudioPlayerCard({
   language,
-  languageFlag,
-  editionDate,
+  languageRegion,
   audioSrc,
-  variant = 'dark',
 }: AudioPlayerCardProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [playbackRate, setPlaybackRate] = useState(1);
-
-  const isLight = variant === 'light';
-  const cardBg = isLight ? '#F5F3ED' : '#252525';
-  const textColor = isLight ? '#252525' : '#FFFFFF';
-  const secondaryTextColor = isLight ? '#666666' : '#CACACA';
-  const progressBg = isLight ? '#D5D5D5' : '#4A4A4A';
-  const progressFill = isLight ? '#252525' : '#FFFFFF';
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const handleTimeUpdate = () => setCurrentTime(audio.currentTime);
-    const handleLoadedMetadata = () => setDuration(audio.duration);
+    const handleTimeUpdate = () => {
+      if (!isDragging) {
+        setCurrentTime(audio.currentTime);
+      }
+    };
+    const handleLoadedMetadata = () => {
+      setDuration(audio.duration);
+    };
+    const handleDurationChange = () => {
+      setDuration(audio.duration);
+    };
     const handleEnded = () => setIsPlaying(false);
 
     audio.addEventListener('timeupdate', handleTimeUpdate);
     audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('durationchange', handleDurationChange);
     audio.addEventListener('ended', handleEnded);
+
+    // Try to get duration if already loaded
+    if (audio.duration) {
+      setDuration(audio.duration);
+    }
 
     return () => {
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.removeEventListener('durationchange', handleDurationChange);
       audio.removeEventListener('ended', handleEnded);
     };
-  }, []);
+  }, [isDragging]);
 
   const togglePlay = () => {
     const audio = audioRef.current;
@@ -61,40 +67,55 @@ export default function AudioPlayerCard({
     setIsPlaying(!isPlaying);
   };
 
-  const skipBackward = () => {
+  const skip = useCallback((seconds: number) => {
     const audio = audioRef.current;
     if (!audio) return;
-    audio.currentTime = Math.max(0, audio.currentTime - 15);
-  };
 
-  const skipForward = () => {
+    const audioDuration = audio.duration || 0;
+    const newTime = Math.max(0, Math.min(audioDuration, audio.currentTime + seconds));
+    audio.currentTime = newTime;
+    setCurrentTime(newTime);
+  }, []);
+
+  const seekToPosition = useCallback((clientX: number) => {
     const audio = audioRef.current;
-    if (!audio) return;
-    audio.currentTime = Math.min(duration, audio.currentTime + 15);
-  };
+    const progressBar = progressRef.current;
+    if (!audio || !progressBar) return;
 
-  const cyclePlaybackRate = () => {
-    const rates = [1, 1.25, 1.5, 1.75, 2, 0.75];
-    const currentIndex = rates.indexOf(playbackRate);
-    const nextRate = rates[(currentIndex + 1) % rates.length];
-    setPlaybackRate(nextRate);
-    if (audioRef.current) {
-      audioRef.current.playbackRate = nextRate;
-    }
-  };
+    const rect = progressBar.getBoundingClientRect();
+    const clickX = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    const percentage = clickX / rect.width;
+    const audioDuration = audio.duration || 0;
+    const newTime = percentage * audioDuration;
+
+    audio.currentTime = newTime;
+    setCurrentTime(newTime);
+  }, []);
 
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const audio = audioRef.current;
-    if (!audio) return;
+    seekToPosition(e.clientX);
+  };
 
-    const rect = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const percentage = clickX / rect.width;
-    audio.currentTime = percentage * duration;
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    seekToPosition(e.clientX);
+
+    const handleMouseMove = (moveEvent: MouseEvent) => {
+      seekToPosition(moveEvent.clientX);
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
   };
 
   const formatTime = (time: number) => {
-    if (isNaN(time)) return '0:00';
+    if (isNaN(time) || time === 0) return '0:00';
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;
@@ -103,269 +124,88 @@ export default function AudioPlayerCard({
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div
-      className="relative w-full rounded-[22px] p-4 md:p-5"
-      style={{ backgroundColor: cardBg }}
-    >
+    <div className="bg-[#252525] flex h-[138px] items-center justify-between pl-4 pr-5 py-4 rounded-[22px]">
       <audio ref={audioRef} src={audioSrc} preload="metadata" />
 
-      {/* Desktop Layout */}
-      <div className="hidden md:flex items-center gap-4">
-        {/* Left: Logo and Language */}
-        <div
-          className="flex flex-col items-center justify-center gap-2 px-6 py-5 rounded-[16px] min-w-[180px]"
-          style={{ backgroundColor: '#2F2F2F' }}
-        >
-          <AudioDigestLogo />
-          <span
-            className="text-[12px] leading-[18px] text-center whitespace-nowrap"
-            style={{ color: '#FFFFFF' }}
-          >
-            {languageFlag} {language}, {editionDate}
-          </span>
-        </div>
-
-        {/* Right: Controls and Progress */}
-        <div className="flex-1 flex flex-col gap-2">
-          {/* Controls */}
-          <div className="flex items-center justify-center gap-3">
-            {/* Playback Rate */}
-            <button
-              onClick={cyclePlaybackRate}
-              className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-white/10 transition-colors"
-              style={{ color: textColor }}
-              title="Playback speed"
-            >
-              <span className="text-[13px] font-medium">{playbackRate}x</span>
-            </button>
-
-            {/* Rewind 15s */}
-            <button
-              onClick={skipBackward}
-              className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-white/10 transition-colors"
-              style={{ color: textColor }}
-              title="Rewind 15 seconds"
-            >
-              <Rewind15Icon />
-            </button>
-
-            {/* Previous (disabled for single track) */}
-            <button
-              className="flex items-center justify-center w-8 h-8 rounded-full opacity-50 cursor-not-allowed"
-              style={{ color: textColor }}
-              disabled
-            >
-              <PreviousIcon />
-            </button>
-
-            {/* Play/Pause */}
-            <button
-              onClick={togglePlay}
-              className="flex items-center justify-center w-12 h-12 rounded-full transition-transform hover:scale-105"
-              style={{ backgroundColor: textColor, color: cardBg }}
-              title={isPlaying ? 'Pause' : 'Play'}
-            >
-              {isPlaying ? <PauseIcon /> : <PlayIcon />}
-            </button>
-
-            {/* Next (disabled for single track) */}
-            <button
-              className="flex items-center justify-center w-8 h-8 rounded-full opacity-50 cursor-not-allowed"
-              style={{ color: textColor }}
-              disabled
-            >
-              <NextIcon />
-            </button>
-
-            {/* Forward 15s */}
-            <button
-              onClick={skipForward}
-              className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-white/10 transition-colors"
-              style={{ color: textColor }}
-              title="Forward 15 seconds"
-            >
-              <Forward15Icon />
-            </button>
-          </div>
-
-          {/* Progress Bar */}
-          <div className="flex items-center gap-3">
-            <span
-              className="text-[12px] min-w-[40px] text-right"
-              style={{ color: secondaryTextColor }}
-            >
-              {formatTime(currentTime)}
-            </span>
-            <div
-              className="flex-1 h-[4px] rounded-full cursor-pointer relative overflow-hidden"
-              style={{ backgroundColor: progressBg }}
-              onClick={handleProgressClick}
-            >
-              <div
-                className="absolute left-0 top-0 h-full rounded-full transition-all duration-100"
-                style={{
-                  width: `${progressPercentage}%`,
-                  backgroundColor: progressFill,
-                }}
-              />
-              <div
-                className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full opacity-0 hover:opacity-100 transition-opacity"
-                style={{
-                  left: `calc(${progressPercentage}% - 6px)`,
-                  backgroundColor: progressFill,
-                }}
-              />
-            </div>
-            <span
-              className="text-[12px] min-w-[40px]"
-              style={{ color: secondaryTextColor }}
-            >
-              {formatTime(duration)}
-            </span>
-          </div>
-        </div>
-
+      {/* Left: Logo and Language */}
+      <div className="flex flex-col h-full justify-between p-4 rounded-[20px] bg-[#2f2f2f] shrink-0">
+        <img
+          src="/audiodigestlogo-white.svg"
+          alt="AudioDigest"
+          className="h-[17px] w-auto"
+        />
+        <p className="text-[13px] leading-[18px] text-white">
+          <span className="font-semibold">{language}</span>
+          {languageRegion && (
+            <>
+              <br />
+              <span className="font-normal">{languageRegion}</span>
+            </>
+          )}
+        </p>
       </div>
 
-      {/* Mobile Layout */}
-      <div className="flex md:hidden flex-col gap-4">
-        {/* Header: Logo and Language */}
-        <div className="flex flex-col gap-1">
-          <AudioDigestLogo size="small" />
-          <span
-            className="text-[14px] leading-[18px]"
-            style={{ color: textColor }}
-          >
-            {languageFlag} {language}
-          </span>
-        </div>
-
-        {/* Controls */}
-        <div className="flex items-center justify-center gap-6">
-          {/* Rewind 15s */}
+      {/* Right: Controls and Progress */}
+      <div className="flex-1 flex flex-col h-full justify-center pl-5">
+        {/* Playback Controls */}
+        <div className="flex gap-[25px] items-center justify-center mb-3">
           <button
-            onClick={skipBackward}
-            className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors"
-            style={{ color: textColor }}
-            title="Rewind 15 seconds"
+            onClick={() => skip(-10)}
+            className="opacity-50 hover:opacity-70 transition-opacity"
+            aria-label="Rewind 10 seconds"
           >
-            <Rewind15Icon size={24} />
+            <img src="/icons/Rewind--10.svg" alt="Rewind 10 seconds" width={32} height={32} />
           </button>
 
-          {/* Play/Pause */}
           <button
             onClick={togglePlay}
-            className="flex items-center justify-center w-14 h-14 rounded-full transition-transform hover:scale-105"
-            style={{ backgroundColor: textColor, color: cardBg }}
-            title={isPlaying ? 'Pause' : 'Play'}
+            className="hover:opacity-90 transition-opacity"
+            aria-label={isPlaying ? 'Pause' : 'Play'}
           >
-            {isPlaying ? <PauseIcon size={24} /> : <PlayIcon size={24} />}
+            <img
+              src={isPlaying ? '/icons/Pause--outline--filled.svg' : '/icons/Play--filled.svg'}
+              alt={isPlaying ? 'Pause' : 'Play'}
+              width={48}
+              height={48}
+            />
           </button>
 
-          {/* Forward 15s */}
           <button
-            onClick={skipForward}
-            className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors"
-            style={{ color: textColor }}
-            title="Forward 15 seconds"
+            onClick={() => skip(10)}
+            className="opacity-50 hover:opacity-70 transition-opacity"
+            aria-label="Forward 10 seconds"
           >
-            <Forward15Icon size={24} />
+            <img src="/icons/Forward--10.svg" alt="Forward 10 seconds" width={32} height={32} />
           </button>
         </div>
 
-        {/* Progress Bar */}
+        {/* Progress Bar / Scrubber */}
         <div className="flex items-center gap-3">
-          <span
-            className="text-[12px] min-w-[36px]"
-            style={{ color: secondaryTextColor }}
-          >
+          <span className="text-[12px] text-white/60 min-w-[32px] tabular-nums">
             {formatTime(currentTime)}
           </span>
           <div
-            className="flex-1 h-[4px] rounded-full cursor-pointer relative overflow-hidden"
-            style={{ backgroundColor: progressBg }}
+            ref={progressRef}
+            className="flex-1 h-[6px] rounded-full cursor-pointer relative bg-white/20 group"
             onClick={handleProgressClick}
+            onMouseDown={handleMouseDown}
           >
+            {/* Progress fill */}
             <div
-              className="absolute left-0 top-0 h-full rounded-full transition-all duration-100"
-              style={{
-                width: `${progressPercentage}%`,
-                backgroundColor: progressFill,
-              }}
+              className="absolute left-0 top-0 h-full rounded-full bg-white/70 pointer-events-none"
+              style={{ width: `${progressPercentage}%` }}
+            />
+            {/* Scrubber handle */}
+            <div
+              className="absolute top-1/2 -translate-y-1/2 w-[14px] h-[14px] rounded-full bg-white shadow-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+              style={{ left: `calc(${progressPercentage}% - 7px)` }}
             />
           </div>
-          <span
-            className="text-[12px] min-w-[36px] text-right"
-            style={{ color: secondaryTextColor }}
-          >
+          <span className="text-[12px] text-white/60 min-w-[32px] text-right tabular-nums">
             {formatTime(duration)}
           </span>
         </div>
       </div>
     </div>
-  );
-}
-
-// Icon Components
-function AudioDigestLogo({ size = 'normal' }: { size?: 'small' | 'normal' }) {
-  // Original sizes: small=17, normal=22, reduced by 40%
-  const height = size === 'small' ? 10 : 13;
-
-  return (
-    <img
-      src="/audiodigestlogo-white.svg"
-      alt="AudioDigest"
-      style={{ height: `${height}px`, width: 'auto', opacity: 0.8 }}
-    />
-  );
-}
-
-function PlayIcon({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M8 5.14v14l11-7-11-7z"/>
-    </svg>
-  );
-}
-
-function PauseIcon({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
-    </svg>
-  );
-}
-
-function Rewind15Icon({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M11 19V5l-7 7 7 7"/>
-      <text x="13" y="15" fill="currentColor" stroke="none" fontSize="8" fontWeight="600">15</text>
-    </svg>
-  );
-}
-
-function Forward15Icon({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M13 5v14l7-7-7-7"/>
-      <text x="2" y="15" fill="currentColor" stroke="none" fontSize="8" fontWeight="600">15</text>
-    </svg>
-  );
-}
-
-function PreviousIcon({ size = 16 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M6 6h2v12H6V6zm3.5 6l8.5 6V6l-8.5 6z"/>
-    </svg>
-  );
-}
-
-function NextIcon({ size = 16 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M6 18l8.5-6L6 6v12zm8.5-6V6h2v12h-2V12z"/>
-    </svg>
   );
 }

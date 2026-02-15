@@ -61,21 +61,20 @@ export default function ContentsPanel({
     >
       {/* Panel container - relative for dropdown positioning */}
       <div className="relative">
-        {/* Header bar - always visible, fixed height, dark theme */}
+        {/* Header bar - always visible, 59px height, dark theme with blur (matching main nav) */}
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full flex items-center justify-between px-4 md:px-5 py-3 md:py-4 text-left rounded-[16px]"
+          className="w-full h-[59px] flex items-center justify-between px-[10px] py-[10px] text-left rounded-[16px] bg-[rgba(37,37,37,0.9)] backdrop-blur-[10px]"
           style={{
-            backgroundColor: '#252525',
             boxShadow: '0 2px 8px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.08)',
           }}
         >
           <div className="flex items-center gap-4">
-            {/* Section color indicator - large gradient pill (14x38px) */}
+            {/* Section color indicator - solid color pill (14x39px) */}
             <div
-              className="w-[14px] h-[38px] rounded-full shrink-0"
+              className="w-[14px] h-[39px] rounded-full shrink-0"
               style={{
-                background: `linear-gradient(180deg, ${colors.outer} 0%, ${colors.inner} 100%)`,
+                backgroundColor: colors.inner,
               }}
             />
             <span className="text-[15px] md:text-[16px] font-medium text-white">

@@ -1,4 +1,4 @@
-import { getEdition, getAllEditionParams, getAudioDigestContent } from '@/lib/content';
+import { getEdition, getAllEditionParams } from '@/lib/content';
 import { formatEditionDate } from '@/lib/constants';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -22,6 +22,14 @@ export async function generateMetadata({ params }: AudioDigestPageProps): Promis
   };
 }
 
+// Audio content for the page
+const audioLanguages = [
+  { language: 'Español', region: '(Latin America)', audioSrc: '/audio/feb-2026/Pi3Pod.MP3' },
+  { language: 'English', audioSrc: '/audio/feb-2026/Pi3Pod.MP3' },
+  { language: 'Español', region: '(Latin America)', audioSrc: '/audio/feb-2026/Pi3Pod.MP3' },
+  { language: 'English', audioSrc: '/audio/feb-2026/Pi3Pod.MP3' },
+];
+
 export default async function AudioDigestPage({ params }: AudioDigestPageProps) {
   const { edition: editionSlug } = await params;
   const edition = getEdition(editionSlug);
@@ -30,30 +38,24 @@ export default async function AudioDigestPage({ params }: AudioDigestPageProps) 
     notFound();
   }
 
-  const audioContent = getAudioDigestContent(editionSlug);
   const formattedDate = formatEditionDate(editionSlug);
 
   return (
-    <div
-      className="min-h-screen flex flex-col"
-      style={{
-        background: 'linear-gradient(128deg, #3B3B3B 13%, #252525 78%)',
-      }}
-    >
+    <div className="min-h-screen flex flex-col bg-[#252525]">
       {/* Main Content */}
       <main className="flex-1">
-        {/* Title Section */}
+        {/* Title Section - Sand background */}
         <div
-          className="flex flex-col items-center justify-center pt-[80px] md:pt-[100px] px-6"
+          className="flex flex-col items-center pt-[80px] md:pt-[100px] px-6 pb-14 md:pb-16"
           style={{ backgroundColor: 'var(--color-sand)' }}
         >
-          <div className="flex flex-col items-center gap-5 pb-14 md:pb-16">
-            {/* AudioDigest Logo */}
-            <div className="flex items-center gap-2">
-              <AudioDigestLogoLarge />
-            </div>
-
-            {/* Edition Date */}
+          {/* AudioDigest Logo and Date */}
+          <div className="flex flex-col items-center gap-5 mb-14 md:mb-[72px]">
+            <img
+              src="/audiodigestlogo.svg"
+              alt="AudioDigest"
+              className="h-[38px] md:h-[45px] w-auto"
+            />
             <p
               className="text-[14px] md:text-[16px] leading-[22px] text-center"
               style={{ color: 'var(--color-night)' }}
@@ -65,74 +67,24 @@ export default async function AudioDigestPage({ params }: AudioDigestPageProps) 
           {/* Purple Container with Cards */}
           <div className="w-full flex justify-center">
             <div
-              className="w-full max-w-[705px] rounded-t-[32px] md:rounded-t-[52px] p-6 md:p-8 flex flex-col gap-6 md:gap-8"
+              className="w-full max-w-[950px] rounded-[32px] md:rounded-[52px] p-6 md:p-8 flex flex-col gap-4 md:gap-8"
               style={{ backgroundColor: '#8F53F0' }}
             >
-              {audioContent.podcasts.length > 0 ? (
-                audioContent.podcasts.map((podcast, index) => (
+              {/* 2-column grid on desktop, 1 column on mobile */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[15px]">
+                {audioLanguages.map((audio, index) => (
                   <AudioPlayerCard
-                    key={podcast.language}
-                    language={podcast.language}
-                    languageFlag={podcast.flag}
-                    editionDate={formattedDate}
-                    audioSrc={podcast.audioSrc}
-                    variant="dark"
+                    key={index}
+                    language={audio.language}
+                    languageRegion={audio.region}
+                    audioSrc={audio.audioSrc}
                   />
-                ))
-              ) : (
-                // Default placeholder cards if no audio content exists
-                <>
-                  <AudioPlayerCard
-                    language="English"
-                    languageFlag="🇬🇧"
-                    editionDate={formattedDate}
-                    audioSrc="/audio/placeholder.mp3"
-                    variant="dark"
-                  />
-                  <AudioPlayerCard
-                    language="Italian"
-                    languageFlag="🇮🇹"
-                    editionDate={formattedDate}
-                    audioSrc="/audio/placeholder.mp3"
-                    variant="dark"
-                  />
-                  <AudioPlayerCard
-                    language="Spanish"
-                    languageFlag="🇪🇸"
-                    editionDate={formattedDate}
-                    audioSrc="/audio/placeholder.mp3"
-                    variant="dark"
-                  />
-                  <AudioPlayerCard
-                    language="French"
-                    languageFlag="🇫🇷"
-                    editionDate={formattedDate}
-                    audioSrc="/audio/placeholder.mp3"
-                    variant="dark"
-                  />
-                  <AudioPlayerCard
-                    language="German"
-                    languageFlag="🇩🇪"
-                    editionDate={formattedDate}
-                    audioSrc="/audio/placeholder.mp3"
-                    variant="dark"
-                  />
-                </>
-              )}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </main>
     </div>
-  );
-}
-
-function AudioDigestLogoLarge() {
-  return (
-    <img
-      src="/audiodigestlogo.svg"
-      alt="AudioDigest"
-      className="h-[38px] md:h-[48px] w-auto"
-    />
   );
 }
