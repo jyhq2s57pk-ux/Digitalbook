@@ -67,7 +67,7 @@ export default function FeatureCard({
                 Goal{' '}
               </h3>
               <p
-                className="text-[13px] leading-[20px] md:text-[15px] md:leading-[24px]"
+                className="text-[14px] leading-[22px] md:text-[15px] md:leading-[24px]"
                 style={{ color: bodyColor }}
               >
                 {feature.goal}
@@ -83,7 +83,7 @@ export default function FeatureCard({
                 Description
               </h3>
               <p
-                className="text-[13px] leading-[20px] md:text-[15px] md:leading-[24px]"
+                className="text-[14px] leading-[22px] md:text-[15px] md:leading-[24px]"
                 style={{ color: bodyColor }}
               >
                 {feature.description}
