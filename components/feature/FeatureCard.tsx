@@ -47,6 +47,7 @@ export default function FeatureCard({
               status={feature.status}
               releaseDate={feature.releaseDate}
               variant={variant}
+              sectionSlug={sectionSlug}
             />
             <h2
               className="text-[28px] leading-[34px] md:text-[32px] md:leading-[40px] tracking-[-0.5px]"
