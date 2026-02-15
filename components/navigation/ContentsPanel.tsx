@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import type { Feature } from '@/lib/types';
+import { useHeader } from '@/contexts/HeaderContext';
 
 interface ContentsPanelProps {
   sectionTitle: string;
@@ -20,6 +21,9 @@ const sectionColors: Record<string, { outer: string; inner: string }> = {
   'audio-digest': { outer: '#c4a3f7', inner: '#8a38f5' },
 };
 
+// Gap from top of viewport (or below header) = 28px
+const TOP_GAP = 28;
+
 export default function ContentsPanel({
   sectionTitle,
   sectionSlug,
@@ -28,6 +32,11 @@ export default function ContentsPanel({
   const [isExpanded, setIsExpanded] = useState(false);
   const showTwoColumns = features.length > 8;
   const colors = sectionColors[sectionSlug] || { outer: '#e0e0e0', inner: '#666666' };
+  const { isHeaderVisible, headerHeight } = useHeader();
+
+  // Calculate top position: 28px gap from viewport top when header hidden,
+  // or headerHeight + 28px when header is visible
+  const topPosition = isHeaderVisible ? headerHeight + TOP_GAP : TOP_GAP;
 
   const scrollToFeature = useCallback((slug: string) => {
     setIsExpanded(false);
@@ -46,7 +55,10 @@ export default function ContentsPanel({
   }, []);
 
   return (
-    <div className="w-full max-w-[1100px] mx-auto sticky top-[90px] lg:top-[88px] z-30">
+    <div
+      className="w-full max-w-[1100px] mx-auto sticky z-30 transition-[top] duration-300 ease-out"
+      style={{ top: `${topPosition}px` }}
+    >
       {/* Panel container - relative for dropdown positioning */}
       <div className="relative">
         {/* Header bar - always visible, fixed height */}

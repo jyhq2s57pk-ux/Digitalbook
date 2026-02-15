@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import type { Section } from '@/lib/types';
 import MobileNav from './MobileNav';
+import { useHeader } from '@/contexts/HeaderContext';
 
 interface SiteHeaderProps {
   sections: Section[];
@@ -19,11 +20,17 @@ export default function SiteHeader({
   currentSectionSlug,
 }: SiteHeaderProps) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const { isHeaderVisible } = useHeader();
 
   return (
     <>
       {/* Global Navigation — dark, semi-transparent with blur (matching Figma) */}
-      <header className="fixed top-0 left-0 right-0 z-40 h-[60px] lg:h-[58px] bg-[rgba(37,37,37,0.9)] backdrop-blur-[10px]">
+      <header
+        className="fixed top-0 left-0 right-0 z-40 h-[60px] lg:h-[58px] bg-[rgba(37,37,37,0.9)] backdrop-blur-[10px] transition-transform duration-300 ease-out"
+        style={{
+          transform: isHeaderVisible ? 'translateY(0)' : 'translateY(-100%)',
+        }}
+      >
         <div className="mx-auto max-w-[1150px] h-full px-5 lg:px-6">
           <div className="flex items-center justify-between h-full">
             {/* Left: Digital Book logo */}
