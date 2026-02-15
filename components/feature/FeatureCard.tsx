@@ -102,7 +102,7 @@ export default function FeatureCard({
                   </span>
                   <div className="flex flex-wrap items-center gap-1.5">
                     {feature.platforms.map((p) => (
-                      <Tag key={p} label={p} variant={variant} />
+                      <Tag key={p} label={p} variant={variant} sectionSlug={sectionSlug} />
                     ))}
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export default function FeatureCard({
                   </span>
                   <div className="flex flex-wrap items-center gap-1.5">
                     {feature.regions.map((r) => (
-                      <Tag key={r} label={r} variant={variant} />
+                      <Tag key={r} label={r} variant={variant} sectionSlug={sectionSlug} />
                     ))}
                   </div>
                 </div>
