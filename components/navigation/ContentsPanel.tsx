@@ -61,29 +61,30 @@ export default function ContentsPanel({
     >
       {/* Panel container - relative for dropdown positioning */}
       <div className="relative">
-        {/* Header bar - always visible, fixed height */}
+        {/* Header bar - always visible, fixed height, dark theme */}
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full flex items-center justify-between px-4 md:px-5 py-3 md:py-4 text-left bg-white rounded-[16px]"
+          className="w-full flex items-center justify-between px-4 md:px-5 py-3 md:py-4 text-left rounded-[16px]"
           style={{
-            boxShadow: '0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)',
+            backgroundColor: '#252525',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.08)',
           }}
         >
-          <div className="flex items-center gap-3">
-            {/* Section color indicator - two-tone pill */}
+          <div className="flex items-center gap-4">
+            {/* Section color indicator - large gradient pill (14x38px) */}
             <div
-              className="w-1.5 h-5 rounded-full"
+              className="w-[14px] h-[38px] rounded-full shrink-0"
               style={{
                 background: `linear-gradient(180deg, ${colors.outer} 0%, ${colors.inner} 100%)`,
               }}
             />
-            <span className="text-[15px] md:text-[16px] font-medium text-[#252525]">
+            <span className="text-[15px] md:text-[16px] font-medium text-white">
               {sectionTitle}
             </span>
           </div>
 
-          {/* Up/Down arrow */}
-          <div className="w-8 h-8 flex items-center justify-center text-[#666] hover:text-[#252525] transition-colors">
+          {/* Up/Down arrow - white */}
+          <div className="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white transition-colors">
             <svg
               width="20"
               height="20"

@@ -55,7 +55,7 @@ export default function SiteHeader({
                     href={`/${editionSlug}/${section.slug}`}
                     className={`shrink-0 rounded-full min-w-[60px] px-[13px] py-[9px] text-[13px] font-medium text-center leading-[18px] transition-colors ${
                       isActive
-                        ? 'bg-white/20 text-white'
+                        ? 'bg-white text-[#252525]'
                         : 'text-white hover:bg-white/10'
                     }`}
                   >
