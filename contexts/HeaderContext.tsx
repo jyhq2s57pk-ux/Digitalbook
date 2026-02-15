@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useRef, type ReactNode } from 'react';
 
 interface HeaderContextType {
   isHeaderVisible: boolean;
@@ -22,50 +22,52 @@ interface HeaderProviderProps {
 
 export function HeaderProvider({ children }: HeaderProviderProps) {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [scrollUpDistance, setScrollUpDistance] = useState(0);
-  const [isScrollingUp, setIsScrollingUp] = useState(false);
+
+  // Use refs for scroll tracking to avoid stale closure issues
+  const lastScrollY = useRef(0);
+  const scrollUpDistance = useRef(0);
+  const wasScrollingUp = useRef(false);
 
   // Header height: 60px on mobile, 58px on desktop (lg)
   const headerHeight = 60;
 
-  const handleScroll = useCallback(() => {
-    const currentScrollY = window.scrollY;
-
-    // Determine scroll direction
-    const scrollingUp = currentScrollY < lastScrollY;
-
-    if (scrollingUp !== isScrollingUp) {
-      // Direction changed, reset scroll distance tracking
-      setScrollUpDistance(0);
-      setIsScrollingUp(scrollingUp);
-    }
-
-    if (scrollingUp) {
-      // Accumulate upward scroll distance
-      const distance = scrollUpDistance + (lastScrollY - currentScrollY);
-      setScrollUpDistance(distance);
-
-      // Show header after scrolling up 200px OR if near the top of the page
-      if (distance >= 200 || currentScrollY < 100) {
-        setIsHeaderVisible(true);
-      }
-    } else {
-      // Scrolling down
-      setScrollUpDistance(0);
-
-      // Hide header when scrolling down (but only after passing the header area)
-      if (currentScrollY > headerHeight) {
-        setIsHeaderVisible(false);
-      }
-    }
-
-    setLastScrollY(currentScrollY);
-  }, [lastScrollY, scrollUpDistance, isScrollingUp, headerHeight]);
-
   useEffect(() => {
     // Set initial scroll position
-    setLastScrollY(window.scrollY);
+    lastScrollY.current = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const previousScrollY = lastScrollY.current;
+
+      // Determine scroll direction
+      const scrollingUp = currentScrollY < previousScrollY;
+
+      // Direction changed - reset distance tracking
+      if (scrollingUp !== wasScrollingUp.current) {
+        scrollUpDistance.current = 0;
+        wasScrollingUp.current = scrollingUp;
+      }
+
+      if (scrollingUp) {
+        // Accumulate upward scroll distance
+        scrollUpDistance.current += (previousScrollY - currentScrollY);
+
+        // Show header after scrolling up 200px OR if near the top of the page
+        if (scrollUpDistance.current >= 200 || currentScrollY < 100) {
+          setIsHeaderVisible(true);
+        }
+      } else {
+        // Scrolling down - reset distance and hide header
+        scrollUpDistance.current = 0;
+
+        // Hide header when scrolling down (but only after passing the header area)
+        if (currentScrollY > headerHeight) {
+          setIsHeaderVisible(false);
+        }
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
 
     // Add scroll listener with passive for better performance
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -73,7 +75,7 @@ export function HeaderProvider({ children }: HeaderProviderProps) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [handleScroll]);
+  }, [headerHeight]);
 
   return (
     <HeaderContext.Provider value={{ isHeaderVisible, headerHeight }}>
