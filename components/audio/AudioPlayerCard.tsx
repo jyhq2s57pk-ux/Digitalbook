@@ -124,29 +124,26 @@ export default function AudioPlayerCard({
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="bg-[#252525] flex h-[138px] items-center justify-between pl-4 pr-5 py-4 rounded-[22px]">
+    <div className="bg-[#252525] flex flex-col md:flex-row md:h-[138px] md:items-center md:justify-between p-4 md:pl-4 md:pr-5 md:py-4 rounded-[22px] gap-4 md:gap-0">
       <audio ref={audioRef} src={audioSrc} preload="metadata" />
 
-      {/* Left: Logo and Language */}
-      <div className="flex flex-col h-full justify-between p-4 rounded-[20px] bg-[#2f2f2f] shrink-0">
+      {/* Top (mobile) / Left (desktop): Logo and Language */}
+      <div className="flex flex-row md:flex-col items-center md:items-start md:justify-between gap-[20px] md:gap-0 p-[10px] rounded-[12px] bg-[#2f2f2f] shrink-0 w-full md:w-[130px] h-[44px] md:h-[106px]">
         <img
-          src="/audiodigestlogo-white.svg"
+          src="/logomark.svg"
           alt="AudioDigest"
-          className="h-[17px] w-auto"
+          className="h-[20px] w-auto shrink-0 hidden md:block"
         />
-        <p className="text-[13px] leading-[18px] text-white">
+        <p className="text-[13px] leading-[18px] text-white text-left flex flex-col justify-center">
           <span className="font-semibold">{language}</span>
           {languageRegion && (
-            <>
-              <br />
-              <span className="font-normal">{languageRegion}</span>
-            </>
+            <span className="font-normal">{languageRegion}</span>
           )}
         </p>
       </div>
 
-      {/* Right: Controls and Progress */}
-      <div className="flex-1 flex flex-col h-full justify-center pl-5">
+      {/* Bottom (mobile) / Right (desktop): Controls and Progress */}
+      <div className="flex-1 flex flex-col justify-center md:pl-5">
         {/* Playback Controls */}
         <div className="flex gap-[25px] items-center justify-center mb-3">
           <button
