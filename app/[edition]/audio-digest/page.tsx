@@ -39,32 +39,29 @@ export default async function AudioDigestPage({ params }: AudioDigestPageProps) 
       <main className="flex-1">
         {/* Title Section - Sand background */}
         <div
-          className="flex flex-col items-center pt-[80px] md:pt-[100px] px-6 pb-14 md:pb-16"
-          style={{ backgroundColor: 'var(--color-sand)' }}
+          className="flex flex-col items-center pt-[80px] md:pt-[100px] px-6 pb-14 md:pb-16 bg-cover bg-center"
+          style={{ backgroundImage: `url('/images/feb-2026/audiodigestbackground.webp')` }}
         >
-          {/* AudioDigest Logo and Date */}
-          <div className="flex flex-col items-center gap-5 mb-14 md:mb-[72px]">
-            <img
-              src="/audiodigestlogo.svg"
-              alt="AudioDigest"
-              className="h-[38px] md:h-[45px] w-auto"
-            />
-            <p
-              className="text-[14px] md:text-[16px] leading-[22px] text-center"
-              style={{ color: 'var(--color-night)' }}
-            >
-              {formattedDate}
-            </p>
-          </div>
-
-          {/* Purple Container with Cards */}
+          {/* Purple Container — Logo left, Cards right */}
           <div className="w-full flex justify-center">
             <div
-              className="w-full max-w-[950px] rounded-[32px] md:rounded-[52px] p-6 md:p-8 flex flex-col gap-4 md:gap-8"
-              style={{ backgroundColor: '#8F53F0' }}
+              className="w-full max-w-[1000px] rounded-[32px] md:rounded-[52px] p-6 md:p-8 flex flex-col md:flex-row md:items-start md:justify-between gap-8"
+              style={{ backgroundColor: '#8F53F0', boxShadow: '0px 8px 60px 0px rgba(0, 0, 0, 0.08)' }}
             >
-              {/* 2-column grid on desktop, 1 column on mobile */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[15px]">
+              {/* Left: AudioDigest Logo and Date */}
+              <div className="flex flex-col items-center gap-5 md:flex-1 md:pt-[24px]">
+                <img
+                  src="/audiodigestlogo-white.svg"
+                  alt="AudioDigest"
+                  className="h-[34px] md:h-[44px] w-auto"
+                />
+                <p className="text-[14px] md:text-[16px] leading-[22px] text-center text-white">
+                  {formattedDate}
+                </p>
+              </div>
+
+              {/* Right: Audio Player Cards stacked */}
+              <div className="flex flex-col gap-[15px] w-full md:w-[518px] shrink-0">
                 {audioContent.podcasts.map((podcast, index) => (
                   <AudioPlayerCard
                     key={index}

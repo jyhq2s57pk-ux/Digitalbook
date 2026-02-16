@@ -124,28 +124,31 @@ export default function AudioPlayerCard({
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="bg-[#252525] flex flex-col md:flex-row md:h-[138px] md:items-center md:justify-between p-4 md:pl-4 md:pr-5 md:py-4 rounded-[22px] gap-4 md:gap-0">
+    <div className="bg-[#252525] flex flex-row h-[123px] items-center justify-between p-[8px] rounded-[22px] w-full max-w-[518px]">
       <audio ref={audioRef} src={audioSrc} preload="metadata" />
 
-      {/* Top (mobile) / Left (desktop): Logo and Language */}
-      <div className="flex flex-row md:flex-col items-center md:items-start md:justify-between gap-[20px] md:gap-0 p-[10px] rounded-[12px] bg-[#2f2f2f] shrink-0 w-full md:w-[130px] h-[44px] md:h-[106px]">
+      {/* Left: Logo and Language */}
+      <div className="flex flex-col h-full items-start justify-between p-[16px] rounded-[20px] bg-[#2f2f2f] shrink-0 w-[163px]">
         <img
           src="/logomark.svg"
           alt="AudioDigest"
-          className="h-[20px] w-auto shrink-0 hidden md:block"
+          className="h-[20px] w-auto shrink-0"
         />
-        <p className="text-[13px] leading-[18px] text-white text-left flex flex-col justify-center">
+        <p className="text-[13px] leading-[18px] text-white text-left">
           <span className="font-semibold">{language}</span>
           {languageRegion && (
-            <span className="font-normal">{languageRegion}</span>
+            <>
+              <br />
+              <span className="font-normal">{languageRegion}</span>
+            </>
           )}
         </p>
       </div>
 
-      {/* Bottom (mobile) / Right (desktop): Controls and Progress */}
-      <div className="flex-1 flex flex-col justify-center md:pl-5">
+      {/* Right: Controls and Progress */}
+      <div className="flex-1 flex flex-col gap-[3px] items-center justify-center pl-4">
         {/* Playback Controls */}
-        <div className="flex gap-[25px] items-center justify-center mb-3">
+        <div className="flex gap-[25px] h-[60px] items-center justify-center w-full">
           <button
             onClick={() => skip(-10)}
             className="opacity-50 hover:opacity-70 transition-opacity"
@@ -177,8 +180,8 @@ export default function AudioPlayerCard({
         </div>
 
         {/* Progress Bar / Scrubber */}
-        <div className="flex items-center gap-3">
-          <span className="text-[12px] text-white/60 min-w-[32px] tabular-nums">
+        <div className="flex items-center gap-3 w-full px-2">
+          <span className="text-[12px] text-white/60 min-w-[28px] tabular-nums">
             {formatTime(currentTime)}
           </span>
           <div
@@ -198,7 +201,7 @@ export default function AudioPlayerCard({
               style={{ left: `calc(${progressPercentage}% - 7px)` }}
             />
           </div>
-          <span className="text-[12px] text-white/60 min-w-[32px] text-right tabular-nums">
+          <span className="text-[12px] text-white/60 min-w-[28px] text-right tabular-nums">
             {formatTime(duration)}
           </span>
         </div>
