@@ -27,7 +27,6 @@ export default function SiteHeader({
   // Extract current section from URL path (e.g., /feb-2026/club-avolta-app -> club-avolta-app)
   const pathSegments = pathname.split('/').filter(Boolean);
   const activeSectionSlug = currentSectionSlug || (pathSegments.length >= 2 ? pathSegments[1] : undefined);
-
   return (
     <>
       {/* Global Navigation — dark, semi-transparent with blur (matching Figma) */}

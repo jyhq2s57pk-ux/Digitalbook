@@ -124,11 +124,11 @@ export default function AudioPlayerCard({
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="bg-[#252525] flex flex-row h-[123px] items-center justify-between p-[8px] rounded-[22px] w-full max-w-[518px]">
+    <div className="bg-[#252525] flex flex-col md:flex-row md:h-[123px] items-stretch md:items-center justify-between p-[8px] pb-[18px] md:pb-[8px] rounded-[22px] w-full max-w-[518px]">
       <audio ref={audioRef} src={audioSrc} preload="metadata" />
 
-      {/* Left: Logo and Language */}
-      <div className="flex flex-col h-full items-start justify-between p-[16px] rounded-[20px] bg-[#2f2f2f] shrink-0 w-[163px]">
+      {/* Top (mobile) / Left (desktop): Logo and Language */}
+      <div className="flex flex-row md:flex-col items-center md:items-start justify-start gap-3 md:gap-0 md:justify-between p-[12px] md:p-[16px] rounded-[16px] md:rounded-[20px] bg-[#2f2f2f] w-full md:w-[163px] md:h-full md:shrink-0">
         <img
           src="/logomark.svg"
           alt="AudioDigest"
@@ -138,15 +138,19 @@ export default function AudioPlayerCard({
           <span className="font-semibold">{language}</span>
           {languageRegion && (
             <>
-              <br />
-              <span className="font-normal">{languageRegion}</span>
+              {' '}
+              <span className="font-normal md:hidden">{languageRegion}</span>
+              <span className="font-normal hidden md:inline">
+                <br />
+                {languageRegion}
+              </span>
             </>
           )}
         </p>
       </div>
 
-      {/* Right: Controls and Progress */}
-      <div className="flex-1 flex flex-col gap-[3px] items-center justify-center pl-4">
+      {/* Bottom (mobile) / Right (desktop): Controls and Progress */}
+      <div className="flex-1 flex flex-col gap-[3px] items-center justify-center px-2 md:px-0 md:pl-4">
         {/* Playback Controls */}
         <div className="flex gap-[25px] h-[60px] items-center justify-center w-full">
           <button

@@ -1,0 +1,12 @@
+{
+  "slug": "order-details",
+  "title": "Order Details",
+  "status": "go-live",
+  "releaseDate": "Feb. 2026",
+  "goal": "The goal is to increase repeat purchases by providing quick access to previous orders. Additionally, we aim to improve user satisfaction by offering a simple and efficient experience.",
+  "description": "The new feature enables users to easily reorder any previous order with just one click. From the My Account section, users can view their order history. When selecting a specific order, they will find a button to quickly reorder that purchase. This enhancement streamlines the shopping experience and saves time for our returning customers.",
+  "tags": ["reorder", "order history", "my account"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": ["/images/feb-2026/web/Order details.webp"]
+}

@@ -54,7 +54,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
             <div key={feature.slug} className="w-full max-w-[1100px]">
               <FeatureCard
                 feature={feature}
-                variant={index % 2 === 0 ? 'light' : 'dark'}
+                variant="light"
                 editionSlug={editionSlug}
                 sectionSlug={sectionSlug}
               />

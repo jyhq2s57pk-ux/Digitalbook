@@ -27,7 +27,7 @@ export default function FeatureCard({
   const bodyColor = isLight ? 'var(--color-night-20)' : '#CACACA';
   const labelColor = isLight ? 'var(--color-night-20)' : '#D3D3D3';
   // Image placeholder colors from Figma
-  const imageBgColor = isLight ? '#c0c0c0' : '#454545';
+  const imageBgColor = isLight ? 'var(--color-sand)' : '#454545';
 
   return (
     <article
