@@ -3,27 +3,29 @@
     {
       "language": "English",
       "flag": "🇬🇧",
-      "audioSrc": "/audio/feb-2026/Pi3Pod.MP3"
+      "audioSrc": "/audio/feb-2026/English-Feb26.m4a"
     },
     {
-      "language": "Italian",
+      "language": "Italiano",
       "flag": "🇮🇹",
-      "audioSrc": "/audio/feb-2026/Pi3Pod.MP3"
+      "audioSrc": "/audio/feb-2026/italiano-Feb26.m4a"
     },
     {
-      "language": "Spanish",
+      "language": "Español",
+      "region": "(Spain)",
       "flag": "🇪🇸",
-      "audioSrc": "/audio/feb-2026/Pi3Pod.MP3"
+      "audioSrc": "/audio/feb-2026/Espanol-feb26.m4a"
     },
     {
-      "language": "French",
-      "flag": "🇫🇷",
-      "audioSrc": "/audio/feb-2026/Pi3Pod.MP3"
+      "language": "Español",
+      "region": "(Latin America)",
+      "flag": "🌎",
+      "audioSrc": "/audio/feb-2026/EspanolLatinAmerican-feb26.m4a"
     },
     {
-      "language": "German",
-      "flag": "🇩🇪",
-      "audioSrc": "/audio/feb-2026/Pi3Pod.MP3"
+      "language": "Português",
+      "flag": "🇧🇷",
+      "audioSrc": "/audio/feb-2026/Portuguese-feb26.m4a"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { getEdition, getAllEditionParams } from '@/lib/content';
+import { getEdition, getAllEditionParams, getAudioDigestContent } from '@/lib/content';
 import { formatEditionDate } from '@/lib/constants';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -22,17 +22,10 @@ export async function generateMetadata({ params }: AudioDigestPageProps): Promis
   };
 }
 
-// Audio content for the page
-const audioLanguages = [
-  { language: 'Español', region: '(Latin America)', audioSrc: '/audio/feb-2026/Pi3Pod.MP3' },
-  { language: 'English', audioSrc: '/audio/feb-2026/Pi3Pod.MP3' },
-  { language: 'Español', region: '(Latin America)', audioSrc: '/audio/feb-2026/Pi3Pod.MP3' },
-  { language: 'English', audioSrc: '/audio/feb-2026/Pi3Pod.MP3' },
-];
-
 export default async function AudioDigestPage({ params }: AudioDigestPageProps) {
   const { edition: editionSlug } = await params;
   const edition = getEdition(editionSlug);
+  const audioContent = getAudioDigestContent(editionSlug);
 
   if (!edition) {
     notFound();
@@ -72,12 +65,12 @@ export default async function AudioDigestPage({ params }: AudioDigestPageProps) 
             >
               {/* 2-column grid on desktop, 1 column on mobile */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[15px]">
-                {audioLanguages.map((audio, index) => (
+                {audioContent.podcasts.map((podcast, index) => (
                   <AudioPlayerCard
                     key={index}
-                    language={audio.language}
-                    languageRegion={audio.region}
-                    audioSrc={audio.audioSrc}
+                    language={podcast.language}
+                    languageRegion={podcast.region}
+                    audioSrc={podcast.audioSrc}
                   />
                 ))}
               </div>

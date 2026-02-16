@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: 'Avolta Digital Book',
   },
   description:
-    'Monthly digital feature releases across Avolta work streams — Website R&C, Club Avolta App, OMS, SSO, My Autogrill, and Audio Digest.',
+    'Monthly digital feature releases across Avolta work streams — Website R&C and Emporium, Club Avolta App, OMS, SSO, My Autogrill, and Audio Digest.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://digitalbook.avolta.com'),
   openGraph: {
     type: 'website',

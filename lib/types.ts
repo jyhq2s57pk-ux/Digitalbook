@@ -51,6 +51,7 @@ export interface SectionConfig {
 
 export interface AudioPodcast {
   language: string;
+  region?: string;
   flag: string;
   audioSrc: string;
 }
