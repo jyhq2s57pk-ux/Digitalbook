@@ -40,14 +40,16 @@ export default function ContentsPanel({
 
   const scrollToFeature = useCallback((slug: string) => {
     setIsExpanded(false);
-    // Wait for panel to collapse, then scroll smoothly
+    // Wait for panel to collapse, then scroll to 20px below the submenu bar
     setTimeout(() => {
       const element = document.getElementById(slug);
-      if (element) {
-        const offset = 140; // Header + collapsed panel + gap
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-          top: elementPosition - offset,
+      const panel = document.getElementById('contents-panel');
+      if (element && panel) {
+        const panelBottom = panel.getBoundingClientRect().bottom;
+        const elementTop = element.getBoundingClientRect().top;
+        const scrollBy = elementTop - panelBottom - 20; // 20px gap below visible bar
+        window.scrollBy({
+          top: scrollBy,
           behavior: 'smooth',
         });
       }
@@ -63,6 +65,7 @@ export default function ContentsPanel({
       <div className="relative">
         {/* Header bar - always visible, 59px height, dark theme with blur (matching main nav) */}
         <button
+          id="contents-panel"
           onClick={() => setIsExpanded(!isExpanded)}
           className="w-full h-[59px] flex items-center justify-between px-[10px] py-[10px] text-left rounded-[16px] bg-[rgba(37,37,37,0.9)] backdrop-blur-[10px]"
           style={{

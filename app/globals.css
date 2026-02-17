@@ -114,11 +114,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
+/* Smooth scroll is handled in JS to properly account for sticky header offsets */
 
 /* Typography utilities */
 .text-h1 {

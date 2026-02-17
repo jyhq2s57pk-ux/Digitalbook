@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     siteName: 'Avolta Digital Book',
     locale: 'en_US',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: '/favicon.png',
+  },
   robots: {
     index: true,
     follow: true,

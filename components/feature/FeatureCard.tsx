@@ -32,7 +32,7 @@ export default function FeatureCard({
   return (
     <article
       id={feature.slug}
-      className="relative overflow-hidden scroll-mt-[180px] md:scroll-mt-[170px] rounded-[32px] md:rounded-[42px] p-6 md:p-8"
+      className="relative overflow-hidden scroll-mt-[167px] rounded-[32px] md:rounded-[42px] p-6 md:p-8"
       style={{ backgroundColor: bg }}
     >
       <div className="flex flex-col gap-6 md:gap-10">
