@@ -56,6 +56,7 @@ export function getEdition(slug: string): Edition | null {
       color: sectionData.color || sectionConfig.color,
       order: sectionData.order ?? sectionConfig.order,
       features,
+      additionalItemsCsv: sectionData.additionalItemsCsv,
     };
   }).sort((a, b) => a.order - b.order);
 

@@ -2,5 +2,6 @@
   "title": "Website R&C and Emporium",
   "summary": "Key releases for the retail website including virtual try-on features, enhanced search capabilities, location pages, and streamlined add-to-bag functionality.",
   "color": "#ED8A40",
-  "order": 1
+  "order": 1,
+  "additionalItemsCsv": "/images/feb-2026/web/AdditionalItems.csv"
 }

@@ -2,6 +2,7 @@ import { getEdition, getSection, getAllSectionParams } from '@/lib/content';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import FeatureCard from '@/components/feature/FeatureCard';
+import AdditionalItems from '@/components/feature/AdditionalItems';
 import ContentsPanel from '@/components/navigation/ContentsPanel';
 
 interface SectionPageProps {
@@ -32,7 +33,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
   }
 
   return (
-    <div className="bg-sand min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--color-sand)' }}>
       {/* Main content area */}
       <div className="flex flex-col gap-[32px] md:gap-[51px] items-center pt-[80px] md:pt-[95px] pb-[100px] md:pb-[200px] px-4 md:px-10">
         {/* Contents Panel - collapsible */}
@@ -40,11 +41,12 @@ export default async function SectionPage({ params }: SectionPageProps) {
           sectionTitle={section.title}
           sectionSlug={sectionSlug}
           features={section.features}
+          hasAdditionalItems={!!section.additionalItemsCsv}
         />
 
         {/* Feature Cards */}
         {section.features.length === 0 ? (
-          <div className="w-full max-w-[1100px] bg-white rounded-[32px] md:rounded-[42px] p-8 text-center">
+          <div className="w-full max-w-[1100px] bg-day rounded-[32px] md:rounded-[42px] p-8 text-center">
             <p className="text-body text-night-40">
               No features in this section yet.
             </p>
@@ -54,12 +56,21 @@ export default async function SectionPage({ params }: SectionPageProps) {
             <div key={feature.slug} className="w-full max-w-[1100px]">
               <FeatureCard
                 feature={feature}
-                variant="light"
                 editionSlug={editionSlug}
                 sectionSlug={sectionSlug}
               />
             </div>
           ))
+        )}
+
+        {/* Additional Items — CSV table rendered after feature cards */}
+        {section.additionalItemsCsv && (
+          <div className="w-full max-w-[1100px]">
+            <AdditionalItems
+              csvPath={section.additionalItemsCsv}
+              sectionSlug={sectionSlug}
+            />
+          </div>
         )}
       </div>
     </div>

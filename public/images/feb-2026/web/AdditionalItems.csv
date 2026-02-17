@@ -1,0 +1,78 @@
+Jira Ref,Summary,Description
+DGS2-5880,[FE][QA] Mobile. The ‘Collection store country’ and ‘Airport or other location’ expanded drop-down lists look broken,Open any RnC store in mobile view.
+DGS2-4604,[BE][QA] Configurable products don't have Member Price styling on PLP in specific case,Open Home Page [https://salvador.shopdutyfree.com/en/56/|https://salvador.shopdutyfree.com/en/56/]
+DGS2-6158,Fix the spacing issue within brand categories carousel,Behalf of [~accountid:5cc3272f614dce0fd78e1900] creating this
+DGS2-5788,[BE][QA] SSO Login Failed when customer phone has invalid number example (.) dot.,We are getting incidents when some customer try to login using SSO it is getting failed. causing the customer not able to login.
+DGS2-5074,[BE] Stock Deduction not happening when order is placed if magento store is mapped to multiple dufry stock source,When the product of the store is mapped to multiple stock source and when the customer places the Order the stock is not deducting from the source table (*Stock*)
+DGS2-6184,"[FE][QA] - ""Save from xx comparated to store"" feature deactivation",There is a feature displayed on all Emporium EMEA DIV10 sites that display a “Save from XX compared to store” price information in red text.
+DGS2-5801,[BE] Best Sellers import not working as expected in Emporium,"We have identified an issue with the bestsellers ranking functionality on Emporium websites. Specifically, the ranking is not displaying as expected."
+DGS2-6179,[FE][QA] - Alcohol age confirmation inconsistency DE,age gate popup incorrect/missing translations for DE an possibly other languages
+DGS2-6117,[FE][QA] The Terms and Conditions validation error is missing for some Payment methods,"Open any RnC or Emporium stores (eg. [https://london-heathrow.mag24-uat.dufry.cloud/en/64/|https://london-heathrow.mag24-uat.dufry.cloud/en/64/|smart-link], [https://shj…"
+DGS2-6022,[BE][NO_QA]Orders are getting Placed in the Dufry Disabled Store,"Location MAN T1 Magento Store ID 96 was switched off from accepting orders on 3rd December, however this location has received the below orders over the past few days"
+DGS2-5998,"[FE][QA] ""From"" is absent for configurable products on Emporium",Open Emporium website [https://es-emporium.mag24-uat.dufry.cloud/|https://es-emporium.mag24-uat.dufry.cloud/]
+DGS2-5966,Fix - Adyen Click to Pay display wrong characters,Fix wrong characters in Adyen “Click to pay” display
+DGS2-5936,[BE] INC2038965: Stock status threshold incorrectly applied by dcis_subcategory across all categories (should be scoped by dcis_category).,The minimum stock threshold logic is mistakenly applied solely by {{dcis_subcategory}} without scoping by {{dcis_category}}.
+DGS2-5907,"[FE][QA] Add translations for ""es_MX"" for Multilayer promotion labels.",Dominican Republic (and generally for Spanish-speaking Caribbean countries) are currently using Spanish phrasing and accentuation that feels closer to Argentinian/Urugua…
+DGS2-5772,"[FE][QA] User see empty ""Arrival/Departure Hour"" dropdown on Checkout in specific case","!image-20251117-204543.png|width=409,alt=""image-20251117-204543.png""!"
+DGS2-5995,[FE][QA] Some images have wrong size on Order Details Page when taken from OMS,OMS Order History is enabled
+DGS2-5954,[FE][QA] - GREECE - NAVIGATIONAL HEADER - BRANDS - Translation adjustments,We need to make some text adjustment within the Brands Navigational header in both Greece employees and fnf sites:
+DGS2-5134,[FE] 'Total Saving' field is missing on 'Order success' page on all Emporium stores,Go to any Emporium store(for example QA DIV7: [https://emporium.mag24-qa.avolta.digital/uk/|https://emporium.mag24-qa.avolta.digital/uk/])
+DGS2-5999,[FE][QA] Product quantity field is autoselected when user change quantity using + / - buttons on Cart,Open any website on mobile [https://madrid.mag24-uat.dufry.cloud/es/16/|https://madrid.mag24-uat.dufry.cloud/es/16/]
+DGS2-5997,[FE][QA] Category chips on Brand PLP have wrong color,Open any Brand PLP with categories [https://laguardia.mag24-uat.dufry.cloud/en/63/brands/dior|https://laguardia.mag24-uat.dufry.cloud/en/63/brands/dior]
+DGS2-5805,[FE][QA] Extra '-' symbol is displayed for price comparison text,Open website where is used High Street Price comparison [https://emporium.mag24-uat.dufry.cloud/uk/|https://emporium.mag24-uat.dufry.cloud/uk/]
+DGS2-6283,[BE] [QA] Error while adding gift bag to cart,Impact
+DGS2-6067,OPTIMISE [BE] INC2038965: Stock status threshold incorrectly applied by dcis_subcategory across all categories (should be scoped by dcis_category).,The minimum stock threshold logic is mistakenly applied solely by {{dcis_subcategory}} without scoping by {{dcis_category}}.
+DGS2-5943,[BE][FE] INC1055541. Duty Free products added to Domestic baskets.,create flag for BE controller
+DGS2-5811,"[FE][QA] Regular ""Was"" price for Member Price products with double currency have bad breakpoint on mobile",Open website with double currency setup [https://zrh.mag24-uat.dufry.cloud/en/53/|https://zrh.mag24-uat.dufry.cloud/en/53/]
+DGS2-6118,[BE][SPIKE] Investigate how to provide multibuy labels and price calculations.,Two of the same item*
+DGS2-5853,[FE] Set translations for short pick up date errors,ACs:*
+DGS2-5025,[BE] Use correct CA API field (redemption_store_id) to validate SAP ERP store ID.,redemption_store_id* array from CA API will have BOTH:
+DGS2-5157,[FE][QA] Open Log in modal for guest customers clicking OOS notify me button,||*Requirement*||*Screen*||
+DGS2-5419,[FE] Wishlist page,Wishlist Page
+DGS2-6095,"[FE][QA][Wishlist] Modify loader on ""add item to wishlist"".",Scenario*
+DGS2-6170,[FE][QA] Products that are not available for purchase can be added to cart from Global Wishlist.,Global Wishlist is enabled;
+DGS2-5971,[BE] Wishlist page additional variables,Some tasks needed for Wishlist from a BE perspective
+DGS2-5407,[BE][Global Wishlist] Update Customer Profile with Wishlist section,Add toggle “Show global wishlist”
+DGS2-5404,[BE][Global Wishlist] Remove item from wishlist,On triggered event from FE “Remove_item_from_wishlist”
+DGS2-5403,[BE][QA][Global Wishlist] Add item to wishlist log,"Add config option “Add wishlist notification” as text with storeview scope, defaule “"
+DGS2-5341,[BE][Global Wishlist] Select and add the simple on PLP,provide an Magento end point to add/remove item from global Wishlist.
+DGS2-4971,[BE][QA][Global wishlist] Load Wish-list on Login and Wishlist Update,Requirements*
+DGS2-6089,[FE][QA] Rename Wishlist icon onhover tooltip depending on state,Current behaviour:*
+DGS2-5421,[FE] Wishlist- Not logged/ registered user,What if a user is not registered/logged in
+DGS2-5418,[FE] PLP & PDP add to wishlist,1. PDP
+DGS2-6182,[FE] Wishlist icon disappear for a moment on first hovering,Open Incognito or clear cache
+DGS2-6076,[FE][QA] Upgrade Adyen Plugin to 10.6.x,Scenario: - We are currently on Adyen Plugin 10.2.x
+DGS2-5821,[BE][QA] Upgrade Adyen Plugin to 10.7.x,Scenario: - We are currently on Adyen Plugin 10.2.x
+DGS2-6068,[FE] Display earlier expiration date when both Catalog & Cart rules are applied,"There is not technical logic in OMS/A&P/Magento or Akeneo, which always prevents combining Cart and Catalog rules in the same products."
+DGS2-6114,[FE] Hide Collect at for home delivery orders,"!image-20260116-091517.png|width=951,alt=""image-20260116-091517.png""!"
+DGS2-5448,"[BE] [Non MVP] Improve ""Order again"" button logic (Emp and RnC) for OMS history","!image-20250926-124227.png|width=454,alt=""image-20250926-124227.png""!"
+DGS2-5430,[FE][Order details] Create a CMS block for pick up information box based on store type,"In RnC we have a few store types: airport, ferry, train station, store. Design added a pick up information in order details with useful tips for customer, but this will…"
+DGS2-6113,[FE] Display Collect at for Emporium pick up in store,"[+E2000501920+|https://emporium.mag24-uat.dufry.cloud/uk/sales/order/view/order_id/476989/] - Dummy Payment Method, Pick-up in store Order"
+DGS2-5967,Emporium - Div7 - Migration Project - Migrate existing transactional emails and add latest Emporium logos,+*GENERAL REQUIREMENT*+
+DGS2-5935,[BE][CRITICAL DEPENDENCY] Provide filters options & mappings for Locations,Filter options list MUST be build based on ALL results from Umbraco → confirmed by [~accountid:6227692115521d00726da26c] : [Daniel Arrojo (Użytkownik zewnętrzny): That i…
+DGS2-5539,"[BE] Create endpoint to return content for Locations (image, name, description)",FE: [https://www.figma.com/design/hxfKf48E8ISfZyMredaWtL/Locations-feature-pages?node-id=4613-121837&t=paGeQjWDh1tO8ZXa-4|https://www.figma.com/design/hxfKf48E8ISfZyMred…
+DGS2-5335,[BE] Create new Magento FE controller for Outlets (Stores and Restaraunts),||*FE stores:* [https://www.figma.com/design/hxfKf48E8ISfZyMredaWtL/Locations-feature-pages?node-id=4613-125267&t=eTsXF6vJyDf1qnZu-4|https://www.figma.com/design/hxfKf48…
+DGS2-5792,[BE] Extend Stores & Restaurants feed with new params,Stores & Restuarants: {{locationType}}
+DGS2-5659,[BE][QA] Cron to cache outlets and store content,create Cron run daily
+DGS2-5568,[BE][QA] Create admin configuration for Outlets API,ACs:*
+DGS2-5690,[FE] Create a CMS block banner for Restaurants & Stores results list,Design: [https://www.figma.com/design/hxfKf48E8ISfZyMredaWtL/Locations-feature-pages?node-id=4869-182060&t=YqImgmAfu6lAiBEj-4|https://www.figma.com/design/hxfKf48E8ISfZy…
+DGS2-5622,[FE] Suncatcher PDP & PLP,We want to do a virtual try-on in both the PDP and the PLP.
+DGS2-5931,[BE] Create Topsort configuration and load JS on every page,Create BE store level config Admin->Dufry->Topsort Banners:
+DGS2-6058,"[FE] Add VTO SKU validation for the ""Try on"" button","There are numerous issues flagged by business, that “Try on” button is visible despite this SKU do not exist in Revive 3rd party platform."
+DGS2-6125,[BE][QA] Extend Revive Make Up endpoint configuration,New Revive feature will most likely use a new endpoint.
+DGS2-6108,[FE] Trigger datalayer events based on Revive hooks,||*Requirements*||*Notes*||
+DGS2-5930,[FE] Integrate & display with new Revive Make Up selector,Demo: [https://demov4.revieve.com/avolta-vto-es?env=prod|https://demov4.revieve.com/avolta-vto-es?env=prod|smart-link]
+DGS2-5929,[BE][QA] Create new Revive Make Up endpoint configuration,New Revive feature will most likely use a new endpoint.
+DGS2-5941,[FE] Fix back button on Skin Analyzer page,Go to [https://madrid.shopdutyfree.com/en/15/skin-analyzer|https://madrid.shopdutyfree.com/en/15/skin-analyzer] from direct link
+DGS2-6083,[FE] Quick add to bag on PLP - SIMPLE products (mob+desktop),Scenario*
+DGS2-6161,"[BE][QA] Product Data integration test, JSON Serialisation, unit test.",[~accountid:557058:96960fbc-24ff-4459-8242-76ab0477bacc]
+DGS2-5904,[BE][QA] E-mail field on Step 1 Checkout doesn't do anything for logged in users.,Open any R&C website [https://zrh.mag24-uat.dufry.cloud/en/53/|https://zrh.mag24-uat.dufry.cloud/en/53/]
+DGS2-6036,[BE][QA] Athens issue in collection time after a purchase in R&C (INC1068885),I would like to refer a serious problem we face in the airport of Athens. The some of the order numbers are those :
+DGS2-5894,"[BE] Send payment type (in store, online) and payment type from Adyen via SQS",Send “Adyen” or “Pay in store”
+DGS2-5892,[BE] Send SQS message for prepaid orders,Send SQS message for prepaid orders to OMS (fetch the second “payment auth” async event and create new SQS message with order status update)
+DGS2-6049,[BE] Add IP adress of purchaser to Order Payload via SQS,Add IP address of customer from the order.
+DGS2-6014,[BE] OOS Products Not Persistently Pushed to End of PLP Across Sorting Options,[~accountid:5e790bd5da8db60c2ed0ac0d]
+DGS2-6131,[BE] Airport Selector Update.,Add attribute “International or Domestic” to Store Entity as global. *ENUM - dropdown list*
+DGS2-4970,Global Wishlist,User cases
+DGS2-5242,Locations Feature Pages (Phase 1 Web),
+DGS2-4947,"[BE] Product is shown with 0,00€ price on DIV1",Open the DIV1 Barselona store with selected Spanish language

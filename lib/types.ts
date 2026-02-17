@@ -32,6 +32,7 @@ export interface Section {
   color: string;
   order: number;
   features: Feature[];
+  additionalItemsCsv?: string;
 }
 
 export interface Edition {

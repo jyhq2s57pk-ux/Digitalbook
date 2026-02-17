@@ -9,6 +9,7 @@ interface ContentsPanelProps {
   sectionSlug: string;
   features: Feature[];
   activeFeatureSlug?: string | null;
+  hasAdditionalItems?: boolean;
 }
 
 // Color mapping from home page buttons - outer (LIGHTER) and inner (DARKER/saturated) colors
@@ -28,6 +29,7 @@ export default function ContentsPanel({
   sectionTitle,
   sectionSlug,
   features,
+  hasAdditionalItems,
 }: ContentsPanelProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const showTwoColumns = features.length > 8;
@@ -67,7 +69,7 @@ export default function ContentsPanel({
         <button
           id="contents-panel"
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full h-[59px] flex items-center justify-between px-[10px] py-[10px] text-left rounded-[16px] bg-[rgba(37,37,37,0.9)] backdrop-blur-[10px]"
+          className="w-full h-[59px] flex items-center justify-between px-[10px] py-[10px] text-left rounded-[16px] bg-[#F5F3ED]"
           style={{
             boxShadow: '0 2px 8px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.08)',
           }}
@@ -80,13 +82,13 @@ export default function ContentsPanel({
                 backgroundColor: colors.inner,
               }}
             />
-            <span className="text-[15px] md:text-[16px] font-medium text-white">
+            <span className="text-[15px] md:text-[16px] font-medium text-night">
               {sectionTitle}
             </span>
           </div>
 
-          {/* Up/Down arrow - white */}
-          <div className="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white transition-colors">
+          {/* Up/Down arrow - dark */}
+          <div className="w-8 h-8 flex items-center justify-center text-night/50 hover:text-night transition-colors">
             <svg
               width="20"
               height="20"
@@ -108,9 +110,11 @@ export default function ContentsPanel({
 
         {/* Expandable dropdown - absolutely positioned to overlay content */}
         <div
-          className="absolute top-full left-0 right-0 mt-2 bg-white rounded-[16px] overflow-hidden transition-all duration-300 ease-out"
+          className="absolute top-full left-0 right-0 mt-2 bg-day rounded-[16px] overflow-hidden transition-all duration-300 ease-out"
           style={{
-            boxShadow: isExpanded ? '0 4px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06)' : 'none',
+            boxShadow: isExpanded
+              ? '0 4px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06)'
+              : 'none',
             opacity: isExpanded ? 1 : 0,
             visibility: isExpanded ? 'visible' : 'hidden',
             transform: isExpanded ? 'translateY(0)' : 'translateY(-8px)',
@@ -126,11 +130,19 @@ export default function ContentsPanel({
                 <button
                   key={feature.slug}
                   onClick={() => scrollToFeature(feature.slug)}
-                  className="text-left text-[14px] md:text-[15px] leading-[22px] text-[#525252] hover:text-[#252525] transition-colors py-1.5"
+                  className="text-left text-[14px] md:text-[15px] leading-[22px] text-night-20 hover:text-night transition-colors py-1.5"
                 >
                   {feature.title}
                 </button>
               ))}
+              {hasAdditionalItems && (
+                <button
+                  onClick={() => scrollToFeature('additional-items')}
+                  className="text-left text-[14px] md:text-[15px] leading-[22px] text-night-20 hover:text-night transition-colors py-1.5"
+                >
+                  Additional Items
+                </button>
+              )}
             </nav>
           </div>
         </div>
