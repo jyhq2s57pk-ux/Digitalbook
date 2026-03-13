@@ -1,0 +1,12 @@
+{
+  "slug": "new-transactional-email-domains",
+  "title": "New Domain for Transactional Emails",
+  "status": "go-live",
+  "releaseDate": "Mar. 2026",
+  "goal": "Migrate transactional email domains for Emporium and Staff Shopping to the new avoltashopping.com domain for improved deliverability and brand consistency.",
+  "description": "Transactional email addresses for Emporium and Staff Shopping are being updated to use the new @orders.avoltashopping.com domain. This includes EMEA, UK, Americas, and APAC regions. For example, Emporium EMEA moves from emporium.support@avolta.net to emporium.support@orders.avoltashopping.com. Staff Shopping domains are similarly updated across all regions.",
+  "tags": ["email", "domain migration", "transactional"],
+  "regions": ["Global"],
+  "platforms": ["SSO"],
+  "images": []
+}

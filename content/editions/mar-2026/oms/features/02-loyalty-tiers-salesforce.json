@@ -1,0 +1,12 @@
+{
+  "slug": "loyalty-tiers-salesforce",
+  "title": "Loyalty Tiers Dynamically Received from Salesforce",
+  "status": "go-live",
+  "releaseDate": "Mar. 2026",
+  "goal": "Enable dynamic retrieval of loyalty tiers from Salesforce to ensure accurate and up-to-date tier information across the OMS.",
+  "description": "Loyalty tiers will now be dynamically received from Salesforce, replacing static configurations. This ensures that tier information displayed in the OMS always reflects the latest data from the central loyalty system.",
+  "tags": ["Salesforce", "loyalty", "tiers"],
+  "regions": ["Global"],
+  "platforms": ["OMS"],
+  "images": ["/images/mar-2026/OMS/slide19-14.png", "/images/mar-2026/OMS/slide19-15.png", "/images/mar-2026/OMS/slide19-16.png"]
+}

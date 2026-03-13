@@ -1,0 +1,12 @@
+{
+  "slug": "uk-staff-shopping-preference-center",
+  "title": "UK Staff Shopping Preference Center",
+  "status": "go-live",
+  "releaseDate": "Mar. 2026",
+  "goal": "Provide UK Staff Shopping users with a dedicated preference center for managing their account settings and communication preferences.",
+  "description": "A new preference center for UK Staff Shopping, allowing staff members to manage their account settings and communication preferences in a centralized location.",
+  "tags": ["staff shopping", "UK", "preference center"],
+  "regions": ["UK"],
+  "platforms": ["Staff Shopping"],
+  "images": ["/images/mar-2026/web/slide13-9.png"]
+}

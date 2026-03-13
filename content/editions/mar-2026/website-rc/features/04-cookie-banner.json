@@ -1,0 +1,12 @@
+{
+  "slug": "cookie-banner",
+  "title": "Cookie Banner Update",
+  "status": "go-live",
+  "releaseDate": "Mar. 2026",
+  "goal": "Update copy on cookie banner to be legally compliant with GDPR policies following feedback from Gianluca and Compliance Team.",
+  "description": "The copy used in the cookie banner has been reworded and updated to legally align with GDPR policies, with specific noting of what Avolta uses the data for. Additionally, links to Cookie Policy and Legal Notice have all been updated to the latest Avolta version. Additional updates are being prepared to deploy a CCPA version for North America users and remove the banner from countries without data privacy policies.",
+  "tags": ["GDPR", "compliance", "cookie banner"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect", "Emporium", "Club Avolta"],
+  "images": ["/images/mar-2026/web/slide9-2.png"]
+}

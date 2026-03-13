@@ -1,0 +1,12 @@
+{
+  "slug": "br-airport-selector-update",
+  "title": "BR - Airport Selector Update",
+  "status": "go-live",
+  "releaseDate": "Mar. 2026",
+  "goal": "Implement a terminal selector that only displays valid terminals matching the business line (duty-free or duty-paid), ensuring users see relevant options and are guided to the correct assortment.",
+  "description": "To make choosing the client departure terminal simple and accurate, our new selector will only show terminals that match their shopping experience. Duty-free websites will list just international terminals. Duty-paid (Dufry Shopping) will show only domestic airports. No matter if they shop online or in the app, they will always be guided to the right terminal and product assortment—making for a smoother, more relevant journey.",
+  "tags": ["airport", "terminal selector", "Brazil"],
+  "regions": ["Brazil"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": []
+}

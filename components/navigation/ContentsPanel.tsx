@@ -69,7 +69,7 @@ export default function ContentsPanel({
         <button
           id="contents-panel"
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full h-[59px] flex items-center justify-between px-[10px] py-[10px] text-left rounded-[16px] bg-[#F5F3ED]"
+          className="w-full h-[59px] flex items-center justify-between px-[10px] py-[10px] text-left rounded-[16px] bg-[rgba(37,37,37,0.9)] backdrop-blur-[10px]"
           style={{
             boxShadow: '0 2px 8px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.08)',
           }}
@@ -82,13 +82,13 @@ export default function ContentsPanel({
                 backgroundColor: colors.inner,
               }}
             />
-            <span className="text-[15px] md:text-[16px] font-medium text-night">
+            <span className="text-[15px] md:text-[16px] font-medium text-white">
               {sectionTitle}
             </span>
           </div>
 
-          {/* Up/Down arrow - dark */}
-          <div className="w-8 h-8 flex items-center justify-center text-night/50 hover:text-night transition-colors">
+          {/* Up/Down arrow - white */}
+          <div className="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white transition-colors">
             <svg
               width="20"
               height="20"

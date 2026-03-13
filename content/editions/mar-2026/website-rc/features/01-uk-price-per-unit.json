@@ -1,0 +1,12 @@
+{
+  "slug": "uk-price-per-unit",
+  "title": "UK - Price per Unit",
+  "status": "go-live",
+  "releaseDate": "Mar. 2026",
+  "goal": "Enable legally compliant unit pricing across all UK digital customer surfaces, ensuring clear and accurate price per unit display everywhere a product price is shown.",
+  "description": "We're introducing transparent unit pricing wherever product prices are shown online. Whether you're browsing listings, viewing product details, exploring search results, or checking your cart, UK customers will now see clear price-per-unit information displayed alongside the product price.",
+  "tags": ["pricing", "compliance", "UK"],
+  "regions": ["UK"],
+  "platforms": ["Website", "Reserve & Collect", "Emporium", "Staff Shopping", "App"],
+  "images": []
+}

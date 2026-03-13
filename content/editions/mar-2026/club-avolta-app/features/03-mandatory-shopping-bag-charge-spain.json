@@ -1,0 +1,12 @@
+{
+  "slug": "mandatory-shopping-bag-charge-spain",
+  "title": "Mandatory Shopping Bag Charge (Spain)",
+  "status": "go-live",
+  "releaseDate": "Mar. 2026",
+  "goal": "Enable a chargeable shopping bag product for Spain that customers can explicitly add within the cart flow, ensuring legal compliance, pricing transparency, and customer control.",
+  "description": "A shopping bag is implemented as a standard product that can be enabled/disabled in Magento BE and displayed in the cart as a selectable tile. The shopping bag is not visible in PLP/SRP, can be added only from the cart, is not auto-added or pre-selected, and appears as a line item across cart, mini-cart, checkout, and order confirmation once selected. It respects stock availability, allows customer-controlled quantity, and updates totals in real time.",
+  "tags": ["compliance", "Spain", "shopping bag"],
+  "regions": ["Spain"],
+  "platforms": ["Website", "App"],
+  "images": []
+}

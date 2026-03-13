@@ -1,0 +1,12 @@
+{
+  "slug": "otp-verification-phase2",
+  "title": "OTP Verification at Sign In - Phase 2",
+  "status": "go-live",
+  "releaseDate": "Mar. 2026",
+  "goal": "Strengthen account security by extending OTP verification capabilities during the sign-in process.",
+  "description": "Phase 2 of OTP verification at sign in, building on the initial implementation. This release includes improvements to account merge, improvements to marketing consents and preferences, improvements to the Employee FNF flow, and updates to the naming scheme for non-email accounts on Club Avolta. Also includes general code cleanup and improvement activities.",
+  "tags": ["OTP", "security", "authentication"],
+  "regions": ["Global"],
+  "platforms": ["SSO"],
+  "images": ["/images/mar-2026/SSO/slide21-17.png"]
+}

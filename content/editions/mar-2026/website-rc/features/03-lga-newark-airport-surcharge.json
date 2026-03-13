@@ -1,0 +1,12 @@
+{
+  "slug": "lga-newark-airport-surcharge",
+  "title": "LGA LaGuardia & Newark RnC 3% Airport Surcharge",
+  "status": "go-live",
+  "releaseDate": "Mar. 2026",
+  "goal": "Ensure a mandatory 3% airport surcharge is correctly applied and transparently displayed on all RnC orders at LGA, EWR, and Newark airports.",
+  "description": "To comply with new airport requirements and avoid any surprises at pickup, we're updating our RnC experience to include a 3% airport surcharge when customers place orders at LaGuardia and Newark airports. A clear, informative tooltip is added to the order totals summary during checkout to explain the mandatory surcharge.",
+  "tags": ["surcharge", "compliance", "RnC"],
+  "regions": ["North America"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": ["/images/mar-2026/web/slide7-1.png"]
+}
