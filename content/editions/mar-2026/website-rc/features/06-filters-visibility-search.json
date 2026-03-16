@@ -1,10 +1,10 @@
 {
   "slug": "filters-visibility-search",
-  "title": "Filters Visibility on Search Results Page",
+  "title": "Filters on Search Results",
   "status": "go-live",
   "releaseDate": "Mar. 2026",
   "goal": "Ensure that all relevant filters available on Product Listing Pages (PLPs) are also visible, active, and functioning correctly across Search Results Pages.",
-  "description": "Some filters currently available on PLPs are not appearing on Search Results Pages, which affects navigation and limits users' ability to refine their search. This update ensures consistent filter visibility and functionality across both PLPs and Search Results Pages.",
+  "description": "All relevant subcategory filters are now visible and functional on search results pages, ensuring a consistent and frictionless navigation experience.",
   "tags": ["search", "filters", "UX"],
   "regions": ["Global"],
   "platforms": ["Website", "Reserve & Collect", "Emporium"],

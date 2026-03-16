@@ -1,10 +1,10 @@
 {
   "slug": "personalization-search-box",
-  "title": "Personalization Phase 2 - Search Box",
+  "title": "Personalised Search Box",
   "status": "go-live",
   "releaseDate": "Mar. 2026",
   "goal": "Increase engagement with the search feature by adding a personalized touch that displays the user's name directly in the search box.",
-  "description": "To elevate the relevance and emotional connection within the search experience, we will implement a personalized search box that displays the user's name. This enhancement supports a warmer, more customized interface while maintaining consistency across navigation touchpoints.",
+  "description": "The search box now greets logged‑in users by name, adding a warmer, more personalised browsing experience.",
   "tags": ["personalization", "search", "UX"],
   "regions": ["Global"],
   "platforms": ["Website", "Reserve & Collect", "Emporium"],
