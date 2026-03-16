@@ -1,0 +1,38 @@
+{
+  "podcasts": [
+    {
+      "language": "English",
+      "flag": "🇬🇧",
+      "audioSrc": "/audio/mar-2026/How_Avolta_Turns_Retail_Laws_Into_Games.m4a"
+    },
+    {
+      "language": "Italiano",
+      "flag": "🇮🇹",
+      "audioSrc": "/audio/mar-2026/Avolta_trasforma_la_sosta_in_gioco.m4a"
+    },
+    {
+      "language": "Español",
+      "region": "(Spain)",
+      "flag": "🇪🇸",
+      "audioSrc": "/audio/mar-2026/Avolta_y_el_cerebro_del_viajero_estresado.m4a"
+    },
+    {
+      "language": "Español",
+      "region": "(Latin America)",
+      "flag": "🌎",
+      "audioSrc": "/audio/mar-2026/La_maquinaria_digital_de_Avolta_en_aeropuertos.m4a"
+    },
+    {
+      "language": "Português",
+      "region": "(Portugal)",
+      "flag": "🇵🇹",
+      "audioSrc": "/audio/mar-2026/A_lógica_da_fricção_na_Avolta.m4a"
+    },
+    {
+      "language": "Português",
+      "region": "(Brazil)",
+      "flag": "🇧🇷",
+      "audioSrc": "/audio/mar-2026/Como_o_atrito_produtivo_fideliza_na_Avolta.m4a"
+    }
+  ]
+}
