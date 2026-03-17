@@ -1,12 +1,12 @@
 {
   "slug": "otp-verification-phase2",
-  "title": "OTP Verification at Sign In - Phase 2",
+  "title": "Enable OTP verification [Phase 1]",
   "status": "go-live",
   "releaseDate": "Mar. 2026",
-  "goal": "Strengthen account security by extending OTP verification capabilities during the sign-in process.",
-  "description": "Phase 2 of OTP verification at sign in, building on the initial implementation. This release includes improvements to account merge, improvements to marketing consents and preferences, improvements to the Employee FNF flow, and updates to the naming scheme for non-email accounts on Club Avolta. Also includes general code cleanup and improvement activities.",
+  "goal": "The goal is to improve the quality and reliability of Club Avolta customer registrations and be legally compliant by introducing a simple verification step for email addresses (and potentially phone numbers). This will help ensure that accounts are created with valid contact information, reduce fraud, and support compliance with local regulations in specific countries.",
+  "description": "Today, customers can register for Club Avolta without confirming that the email or phone number they provide is real. We aim to introduce a one-time verification code (OTP) for Germany and Austria as a first phase.\n\nThe rollout will be gradual across platforms (SSO Web, App, Tablets, Self Checkouts) to avoid operational disruptions. This change will help us protect the program from fake accounts, improve data accuracy, and meet legal requirements in markets like Germany and Austria.\n\nNext countries considered: Greece, Norway, Switzerland, Luxembourg, and Italy.",
   "tags": ["OTP", "security", "authentication"],
   "regions": ["Global"],
   "platforms": ["SSO"],
-  "images": ["/images/mar-2026/SSO/otp-verification.png", "/images/mar-2026/SSO/enable-otp.png"]
+  "images": ["/images/mar-2026/SSO/enable-otp.png"]
 }
