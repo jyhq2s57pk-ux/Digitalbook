@@ -2,5 +2,32 @@
   "title": "OMS",
   "summary": "",
   "color": "#00897B",
-  "order": 3
+  "order": 3,
+  "nutshell": [
+    {
+      "heading": "Non-ADV promotion and Club Avolta",
+      "items": [
+        "Avolta ID and tier displayed on the order detail page and the pick-up sheet.",
+        "Non-adv promotions fields have UI validations.",
+        "Exclude items from Non-ADV Promotions using SAP codes"
+      ]
+    },
+    {
+      "heading": "Locker:",
+      "items": [
+        "Added 2 new delivery statuses : Locker booked and Locker retreived"
+      ]
+    },
+    {
+      "heading": "Operational enhancements",
+      "items": [
+        "Update cart calculation logic to exclude configured products from Non-ADV promotions.",
+        "Quota violations section always in an expanded view.",
+        "Stock source and Stock destination column added on the orders page.",
+        "Added Club Avolta ID and Tier details to the order details page",
+        "Import and display codes from Magento on the order details page and print order sheet.",
+        "Added collection time to the Collection date column in the Order Fulfilment page"
+      ]
+    }
+  ]
 }

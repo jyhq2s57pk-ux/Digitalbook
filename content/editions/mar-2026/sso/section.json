@@ -2,5 +2,19 @@
   "title": "SSO",
   "summary": "",
   "color": "#616161",
-  "order": 4
+  "order": 4,
+  "nutshell": [
+    {
+      "heading": "The technical topics on SSO this month are the following:",
+      "items": [
+        "Code cleanup & improvement activities",
+        "Improvements to Account Merge",
+        "Improvements to Marketing Consents and Preferences",
+        "Improvements to Employee – FNF flow",
+        "OTP verification at sign in – Phase 2",
+        "Update of naming scheme for non-email accounts on Club Avolta"
+      ]
+    }
+  ],
+  "nutshellFooter": "Release 3.3.2 - March 11th\nRelease 3.3.3 - March 25th"
 }

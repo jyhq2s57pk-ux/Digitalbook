@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import FeatureCard from '@/components/feature/FeatureCard';
 import FeatureViewTracker from '@/components/feature/FeatureViewTracker';
+import NutshellCard from '@/components/feature/NutshellCard';
 import AdditionalItems from '@/components/feature/AdditionalItems';
 import ContentsPanel from '@/components/navigation/ContentsPanel';
 
@@ -45,6 +46,19 @@ export default async function SectionPage({ params }: SectionPageProps) {
           features={section.features}
           hasAdditionalItems={!!section.additionalItemsCsv}
         />
+
+        {/* In a Nutshell card — shown at top when section has nutshell data */}
+        {section.nutshell && section.nutshell.length > 0 && (
+          <div className="w-full max-w-[1100px]">
+            <NutshellCard
+              sectionTitle={section.title}
+              blocks={section.nutshell}
+              footer={section.nutshellFooter}
+              editionSlug={editionSlug}
+              sectionSlug={sectionSlug}
+            />
+          </div>
+        )}
 
         {/* Feature Cards */}
         {section.features.length === 0 ? (

@@ -25,6 +25,11 @@ export interface Feature {
   audioSources?: Record<string, string>; // For Audio Digest: { en: "path.mp3", fr: "path.mp3" }
 }
 
+export interface NutshellBlock {
+  heading: string;
+  items: string[];
+}
+
 export interface Section {
   slug: string;
   title: string;
@@ -33,6 +38,8 @@ export interface Section {
   order: number;
   features: Feature[];
   additionalItemsCsv?: string;
+  nutshell?: NutshellBlock[];
+  nutshellFooter?: string;
 }
 
 export interface Edition {

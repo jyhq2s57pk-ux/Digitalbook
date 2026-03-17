@@ -57,6 +57,8 @@ export function getEdition(slug: string): Edition | null {
       order: sectionData.order ?? sectionConfig.order,
       features,
       additionalItemsCsv: sectionData.additionalItemsCsv,
+      nutshell: sectionData.nutshell,
+      nutshellFooter: sectionData.nutshellFooter,
     };
   }).sort((a, b) => a.order - b.order);
 
