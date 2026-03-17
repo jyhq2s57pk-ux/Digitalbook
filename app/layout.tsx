@@ -14,6 +14,18 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Avolta Digital Book',
     locale: 'en_US',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1000,
+        height: 1000,
+        alt: 'Avolta Digital Book',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-image.png'],
   },
   icons: {
     icon: [
