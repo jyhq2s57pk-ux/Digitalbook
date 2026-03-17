@@ -8,5 +8,5 @@
   "tags": ["email", "domain migration", "transactional"],
   "regions": ["Global"],
   "platforms": ["SSO"],
-  "images": []
+  "images": ["/images/mar-2026/SSO/transactional-emails.png"]
 }
