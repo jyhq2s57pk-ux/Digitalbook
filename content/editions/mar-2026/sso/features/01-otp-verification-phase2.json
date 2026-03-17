@@ -1,6 +1,6 @@
 {
   "slug": "otp-verification-phase2",
-  "title": "Enable OTP verification [Phase 1]",
+  "title": "Enable OTP verification",
   "status": "go-live",
   "releaseDate": "Mar. 2026",
   "goal": "The goal is to improve the quality and reliability of Club Avolta customer registrations and be legally compliant by introducing a simple verification step for email addresses (and potentially phone numbers). This will help ensure that accounts are created with valid contact information, reduce fraud, and support compliance with local regulations in specific countries.",
