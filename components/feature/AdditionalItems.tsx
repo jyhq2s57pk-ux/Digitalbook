@@ -5,6 +5,7 @@ import CopyLinkButton from '@/components/ui/CopyLinkButton';
 interface AdditionalItemsProps {
   csvPath: string;
   sectionSlug: string;
+  editionSlug: string;
 }
 
 interface CsvRow {
@@ -71,7 +72,7 @@ const sectionColors: Record<string, { light: string; headerBg: string }> = {
   'my-autogrill': { light: 'rgba(198, 40, 40, 0.06)', headerBg: 'rgba(198, 40, 40, 0.10)' },
 };
 
-export default function AdditionalItems({ csvPath, sectionSlug }: AdditionalItemsProps) {
+export default function AdditionalItems({ csvPath, sectionSlug, editionSlug }: AdditionalItemsProps) {
   // Read and parse CSV at build time (server component)
   const fullPath = path.join(process.cwd(), 'public', csvPath);
 
@@ -153,7 +154,7 @@ export default function AdditionalItems({ csvPath, sectionSlug }: AdditionalItem
 
       {/* Copy link button — positioned top right, matching FeatureCard */}
       <div className="absolute top-6 right-6 md:top-8 md:right-8">
-        <CopyLinkButton featureSlug="additional-items" />
+        <CopyLinkButton featureSlug="additional-items" editionSlug={editionSlug} sectionSlug={sectionSlug} />
       </div>
     </article>
   );

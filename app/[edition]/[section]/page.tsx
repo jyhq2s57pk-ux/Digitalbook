@@ -2,6 +2,7 @@ import { getEdition, getSection, getAllSectionParams } from '@/lib/content';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import FeatureCard from '@/components/feature/FeatureCard';
+import FeatureViewTracker from '@/components/feature/FeatureViewTracker';
 import AdditionalItems from '@/components/feature/AdditionalItems';
 import ContentsPanel from '@/components/navigation/ContentsPanel';
 
@@ -40,6 +41,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
         <ContentsPanel
           sectionTitle={section.title}
           sectionSlug={sectionSlug}
+          editionSlug={editionSlug}
           features={section.features}
           hasAdditionalItems={!!section.additionalItemsCsv}
         />
@@ -54,11 +56,18 @@ export default async function SectionPage({ params }: SectionPageProps) {
         ) : (
           section.features.map((feature, index) => (
             <div key={feature.slug} className="w-full max-w-[1100px]">
-              <FeatureCard
-                feature={feature}
-                editionSlug={editionSlug}
-                sectionSlug={sectionSlug}
-              />
+              <FeatureViewTracker
+                edition={editionSlug}
+                section={sectionSlug}
+                feature={feature.slug}
+                title={feature.title}
+              >
+                <FeatureCard
+                  feature={feature}
+                  editionSlug={editionSlug}
+                  sectionSlug={sectionSlug}
+                />
+              </FeatureViewTracker>
             </div>
           ))
         )}
@@ -69,6 +78,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
             <AdditionalItems
               csvPath={section.additionalItemsCsv}
               sectionSlug={sectionSlug}
+              editionSlug={editionSlug}
             />
           </div>
         )}

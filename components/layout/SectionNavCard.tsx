@@ -1,8 +1,12 @@
+'use client';
+
 import Link from 'next/link';
+import { track } from '@vercel/analytics';
 
 interface SectionNavCardProps {
   title: string;
   sectionSlug: string;
+  editionSlug: string;
   href: string;
   isAudioDigest?: boolean;
 }
@@ -42,9 +46,13 @@ function ArrowIcon({ className }: { className?: string }) {
 export default function SectionNavCard({
   title,
   sectionSlug,
+  editionSlug,
   href,
   isAudioDigest = false,
 }: SectionNavCardProps) {
+  const handleClick = () => {
+    track('section_navigated', { edition: editionSlug, section: sectionSlug });
+  };
   const colors = sectionColors[sectionSlug] || { outer: '#353535', inner: '#585858' };
 
   // AudioDigest has special treatment with gradient
@@ -52,6 +60,7 @@ export default function SectionNavCard({
     return (
       <Link
         href={href}
+        onClick={handleClick}
         className="group relative flex items-end justify-between rounded-[20px] md:rounded-[30px] p-4 md:pl-4 md:pr-5 md:py-4 h-[159px] md:h-[208px] transition-transform hover:scale-[1.02] active:scale-[0.98]"
         style={{ backgroundColor: colors.outer }}
       >
@@ -84,6 +93,7 @@ export default function SectionNavCard({
   return (
     <Link
       href={href}
+      onClick={handleClick}
       className="group relative flex items-end justify-between rounded-[20px] md:rounded-[30px] p-4 md:pl-4 md:pr-5 md:py-4 h-[159px] md:h-[211px] transition-transform hover:scale-[1.02] active:scale-[0.98]"
       style={{ backgroundColor: colors.outer }}
     >

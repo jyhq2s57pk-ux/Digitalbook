@@ -1,20 +1,24 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { track } from '@vercel/analytics';
 
 interface CopyLinkButtonProps {
   /** The anchor hash to append to the current URL, e.g. "marketing-preferences" */
   featureSlug: string;
+  editionSlug: string;
+  sectionSlug: string;
   variant?: 'light' | 'dark';
 }
 
-export default function CopyLinkButton({ featureSlug, variant = 'light' }: CopyLinkButtonProps) {
+export default function CopyLinkButton({ featureSlug, editionSlug, sectionSlug, variant = 'light' }: CopyLinkButtonProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = useCallback(async () => {
     const url = `${window.location.origin}${window.location.pathname}#${featureSlug}`;
     try {
       await navigator.clipboard.writeText(url);
+      track('feature_link_copied', { edition: editionSlug, section: sectionSlug, feature: featureSlug });
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -25,6 +29,7 @@ export default function CopyLinkButton({ featureSlug, variant = 'light' }: CopyL
       input.select();
       document.execCommand('copy');
       document.body.removeChild(input);
+      track('feature_link_copied', { edition: editionSlug, section: sectionSlug, feature: featureSlug });
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }

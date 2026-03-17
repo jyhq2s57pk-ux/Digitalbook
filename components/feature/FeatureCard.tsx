@@ -150,7 +150,7 @@ export default function FeatureCard({
 
       {/* Copy link button — positioned top right */}
       <div className="absolute top-6 right-6 md:top-8 md:right-8">
-        <CopyLinkButton featureSlug={feature.slug} variant={variant} />
+        <CopyLinkButton featureSlug={feature.slug} editionSlug={editionSlug} sectionSlug={sectionSlug} variant={variant} />
       </div>
     </article>
   );

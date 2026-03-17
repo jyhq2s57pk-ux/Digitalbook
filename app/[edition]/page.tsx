@@ -62,6 +62,7 @@ export default async function EditionPage({ params }: EditionPageProps) {
               key={section.slug}
               title={section.title}
               sectionSlug={section.slug}
+              editionSlug={editionSlug}
               href={`/${editionSlug}/${section.slug}`}
               isAudioDigest={section.slug === 'audio-digest'}
             />

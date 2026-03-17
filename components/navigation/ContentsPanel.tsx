@@ -1,12 +1,14 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { track } from '@vercel/analytics';
 import type { Feature } from '@/lib/types';
 import { useHeader } from '@/contexts/HeaderContext';
 
 interface ContentsPanelProps {
   sectionTitle: string;
   sectionSlug: string;
+  editionSlug: string;
   features: Feature[];
   activeFeatureSlug?: string | null;
   hasAdditionalItems?: boolean;
@@ -28,6 +30,7 @@ const TOP_GAP = 28;
 export default function ContentsPanel({
   sectionTitle,
   sectionSlug,
+  editionSlug,
   features,
   hasAdditionalItems,
 }: ContentsPanelProps) {
@@ -41,6 +44,7 @@ export default function ContentsPanel({
   const topPosition = isHeaderVisible ? headerHeight + TOP_GAP : TOP_GAP;
 
   const scrollToFeature = useCallback((slug: string) => {
+    track('contents_item_clicked', { section: sectionSlug, feature: slug });
     setIsExpanded(false);
     // Wait for panel to collapse, then scroll to 20px below the submenu bar
     setTimeout(() => {
