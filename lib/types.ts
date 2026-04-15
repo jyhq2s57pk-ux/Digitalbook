@@ -20,6 +20,7 @@ export interface Feature {
   platforms: string[];
   images: string[];
   imageFit?: 'contain' | 'cover';
+  imagePadY?: number;
   owner?: string;
   jiraLink?: string;
   docsLink?: string;

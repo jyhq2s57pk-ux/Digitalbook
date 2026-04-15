@@ -132,12 +132,17 @@ export default function FeatureCard({
           className="relative w-full aspect-video rounded-[20px] md:rounded-[28px] overflow-hidden"
           style={{ backgroundColor: imageBgColor }}
         >
-          <FeatureImage
-            src={feature.images.length > 0 ? feature.images[0] : '/images/jan-2026/desktop.png'}
-            alt={`${feature.title} feature screenshot`}
-            labelColor={labelColor}
-            fit={feature.imageFit}
-          />
+          <div
+            className="absolute inset-x-0"
+            style={{ top: feature.imagePadY ?? 0, bottom: feature.imagePadY ?? 0 }}
+          >
+            <FeatureImage
+              src={feature.images.length > 0 ? feature.images[0] : '/images/jan-2026/desktop.png'}
+              alt={`${feature.title} feature screenshot`}
+              labelColor={labelColor}
+              fit={feature.imageFit}
+            />
+          </div>
         </div>
 
         {/* Audio Digest Player — renders when feature has audioSources */}
