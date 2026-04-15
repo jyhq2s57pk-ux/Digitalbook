@@ -128,22 +128,39 @@ export default function FeatureCard({
         </div>
 
         {/* Image area — always shown, uses placeholder if no image provided */}
-        <div
-          className="relative w-full aspect-video rounded-[20px] md:rounded-[28px] overflow-hidden"
-          style={{ backgroundColor: imageBgColor }}
-        >
+        {feature.imageFit === 'natural' ? (
           <div
-            className="absolute inset-x-0"
-            style={{ top: feature.imagePadY ?? 0, bottom: feature.imagePadY ?? 0 }}
+            className="w-full rounded-[20px] md:rounded-[28px] overflow-hidden"
+            style={{
+              backgroundColor: imageBgColor,
+              paddingTop: feature.imagePadY ?? 0,
+              paddingBottom: feature.imagePadY ?? 0,
+            }}
           >
-            <FeatureImage
+            <img
               src={feature.images.length > 0 ? feature.images[0] : '/images/jan-2026/desktop.png'}
               alt={`${feature.title} feature screenshot`}
-              labelColor={labelColor}
-              fit={feature.imageFit}
+              className="w-full h-auto block"
             />
           </div>
-        </div>
+        ) : (
+          <div
+            className="relative w-full aspect-video rounded-[20px] md:rounded-[28px] overflow-hidden"
+            style={{ backgroundColor: imageBgColor }}
+          >
+            <div
+              className="absolute inset-x-0"
+              style={{ top: feature.imagePadY ?? 0, bottom: feature.imagePadY ?? 0 }}
+            >
+              <FeatureImage
+                src={feature.images.length > 0 ? feature.images[0] : '/images/jan-2026/desktop.png'}
+                alt={`${feature.title} feature screenshot`}
+                labelColor={labelColor}
+                fit={feature.imageFit}
+              />
+            </div>
+          </div>
+        )}
 
         {/* Audio Digest Player — renders when feature has audioSources */}
         {feature.audioSources && Object.keys(feature.audioSources).length > 0 && (

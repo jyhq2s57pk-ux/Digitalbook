@@ -9,6 +9,6 @@
   "regions": ["Brazil"],
   "platforms": ["Website", "Reserve & Collect"],
   "images": ["/images/apr-2026/web/airport-selector.png"],
-  "imageFit": "cover",
+  "imageFit": "natural",
   "imagePadY": 20
 }

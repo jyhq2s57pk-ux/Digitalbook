@@ -19,7 +19,7 @@ export interface Feature {
   regions: string[];
   platforms: string[];
   images: string[];
-  imageFit?: 'contain' | 'cover';
+  imageFit?: 'contain' | 'cover' | 'natural';
   imagePadY?: number;
   owner?: string;
   jiraLink?: string;
