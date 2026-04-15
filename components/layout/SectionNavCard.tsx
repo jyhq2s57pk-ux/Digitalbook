@@ -9,6 +9,7 @@ interface SectionNavCardProps {
   editionSlug: string;
   href: string;
   isAudioDigest?: boolean;
+  spanTwoRows?: boolean;
 }
 
 // Color mapping from Figma - outer (LIGHTER) and inner (DARKER/saturated) colors
@@ -18,6 +19,7 @@ const sectionColors: Record<string, { outer: string; inner: string }> = {
   'oms': { outer: '#5ae0c9', inner: '#198674' },
   'sso': { outer: '#cccccc', inner: '#777777' },
   'my-autogrill': { outer: '#eb707c', inner: '#d61f31' },
+  'progressive-web-app': { outer: '#7a7a7a', inner: '#1a1a1a' },
   'audio-digest': { outer: 'rgba(94,45,157,0.44)', inner: '#8a38f5' },
 };
 
@@ -49,6 +51,7 @@ export default function SectionNavCard({
   editionSlug,
   href,
   isAudioDigest = false,
+  spanTwoRows = false,
 }: SectionNavCardProps) {
   const handleClick = () => {
     track('section_navigated', { edition: editionSlug, section: sectionSlug });
@@ -61,7 +64,7 @@ export default function SectionNavCard({
       <Link
         href={href}
         onClick={handleClick}
-        className="group relative flex items-end justify-between rounded-[20px] md:rounded-[30px] p-4 md:pl-4 md:pr-5 md:py-4 h-[159px] md:h-[208px] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+        className={`group relative flex items-end justify-between rounded-[20px] md:rounded-[30px] p-4 md:pl-4 md:pr-5 md:py-4 transition-transform hover:scale-[1.02] active:scale-[0.98] ${spanTwoRows ? 'h-[159px] md:h-[438px] md:row-span-2' : 'h-[159px] md:h-[208px]'}`}
         style={{ backgroundColor: colors.outer }}
       >
         {/* Inner card with gradient */}

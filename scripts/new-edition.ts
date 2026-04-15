@@ -29,7 +29,8 @@ const SECTIONS = [
   { slug: 'oms', title: 'OMS', color: '#00897B', order: 3 },
   { slug: 'sso', title: 'SSO', color: '#616161', order: 4 },
   { slug: 'my-autogrill', title: 'My Autogrill', color: '#C62828', order: 5 },
-  { slug: 'audio-digest', title: 'Audio Digest', color: '#4D0FB1', order: 6 },
+  { slug: 'progressive-web-app', title: 'PWA', color: '#1a1a1a', order: 6 },
+  { slug: 'audio-digest', title: 'Audio Digest', color: '#4D0FB1', order: 7 },
 ];
 
 const MONTH_NAMES: Record<string, { full: string; num: string }> = {

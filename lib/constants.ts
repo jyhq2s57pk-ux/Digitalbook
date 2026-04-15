@@ -1,13 +1,14 @@
 import type { SectionConfig, FeatureStatus } from './types';
 
-// All 6 work stream sections with their brand colors
+// All work stream sections with their brand colors
 export const SECTIONS: SectionConfig[] = [
   { slug: 'website-rc', title: 'Website R&C and Emporium', color: '#ED8A40', order: 1 },
   { slug: 'club-avolta-app', title: 'Club Avolta App', color: '#8F53F0', order: 2 },
   { slug: 'oms', title: 'OMS', color: '#00897B', order: 3 },
   { slug: 'sso', title: 'SSO', color: '#616161', order: 4 },
   { slug: 'my-autogrill', title: 'My Autogrill', color: '#C62828', order: 5 },
-  { slug: 'audio-digest', title: 'Audio Digest', color: '#4D0FB1', order: 6 },
+  { slug: 'progressive-web-app', title: 'PWA', color: '#1a1a1a', order: 6 },
+  { slug: 'audio-digest', title: 'Audio Digest', color: '#4D0FB1', order: 7 },
 ];
 
 // Status pill configuration

@@ -55,18 +55,31 @@ export default async function EditionPage({ params }: EditionPageProps) {
         className="w-full max-w-[953px] p-5 md:p-8 rounded-[32px] md:rounded-[64px]"
         style={{ boxShadow: '0px -4px 20px 0px rgba(0, 0, 0, 0.1)' }}
       >
-        {/* Section Navigation Cards — single column mobile, 2 columns desktop */}
+        {/* Section Navigation Cards — single column mobile, 2 columns desktop.
+            When both PWA and AudioDigest are present, render AudioDigest before
+            PWA so AudioDigest fills the right column spanning 2 rows and PWA
+            flows into the left column beneath My Autogrill. */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-          {edition.sections.map((section) => (
-            <SectionNavCard
-              key={section.slug}
-              title={section.title}
-              sectionSlug={section.slug}
-              editionSlug={editionSlug}
-              href={`/${editionSlug}/${section.slug}`}
-              isAudioDigest={section.slug === 'audio-digest'}
-            />
-          ))}
+          {(() => {
+            const sections = [...edition.sections];
+            const pwaIdx = sections.findIndex((s) => s.slug === 'progressive-web-app');
+            const adIdx = sections.findIndex((s) => s.slug === 'audio-digest');
+            if (pwaIdx !== -1 && adIdx !== -1 && pwaIdx < adIdx) {
+              [sections[pwaIdx], sections[adIdx]] = [sections[adIdx], sections[pwaIdx]];
+            }
+            const hasPwa = pwaIdx !== -1;
+            return sections.map((section) => (
+              <SectionNavCard
+                key={section.slug}
+                title={section.title}
+                sectionSlug={section.slug}
+                editionSlug={editionSlug}
+                href={`/${editionSlug}/${section.slug}`}
+                isAudioDigest={section.slug === 'audio-digest'}
+                spanTwoRows={hasPwa && section.slug === 'audio-digest'}
+              />
+            ));
+          })()}
         </div>
       </div>
     </div>

@@ -31,25 +31,19 @@ export function getEdition(slug: string): Edition | null {
 
   const editionData = JSON.parse(fs.readFileSync(editionFile, 'utf-8'));
 
-  const sections: Section[] = SECTIONS.map((sectionConfig) => {
+  const sections: Section[] = SECTIONS.flatMap((sectionConfig) => {
     const sectionDir = path.join(editionDir, sectionConfig.slug);
     const sectionFile = path.join(sectionDir, 'section.json');
 
+    // Skip sections that don't exist in this edition (e.g., PWA is apr-2026+)
     if (!fs.existsSync(sectionFile)) {
-      return {
-        slug: sectionConfig.slug,
-        title: sectionConfig.title,
-        summary: '',
-        color: sectionConfig.color,
-        order: sectionConfig.order,
-        features: [],
-      };
+      return [];
     }
 
     const sectionData = JSON.parse(fs.readFileSync(sectionFile, 'utf-8'));
     const features = loadFeatures(sectionDir);
 
-    return {
+    return [{
       slug: sectionConfig.slug,
       title: sectionData.title || sectionConfig.title,
       summary: sectionData.summary || '',
@@ -59,7 +53,7 @@ export function getEdition(slug: string): Edition | null {
       additionalItemsCsv: sectionData.additionalItemsCsv,
       nutshell: sectionData.nutshell,
       nutshellFooter: sectionData.nutshellFooter,
-    };
+    }];
   }).sort((a, b) => a.order - b.order);
 
   return {
