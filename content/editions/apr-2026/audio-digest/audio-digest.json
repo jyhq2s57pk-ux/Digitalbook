@@ -1,0 +1,20 @@
+{
+  "podcasts": [
+    {
+      "language": "English",
+      "flag": "🇬🇧",
+      "audioSrc": "/audio/apr-2026/How_Avolta_Code_Reshapes_Airport_Retail.m4a"
+    },
+    {
+      "language": "Español",
+      "flag": "🇪🇸",
+      "audioSrc": "/audio/apr-2026/Vender_más_con_fricción_positiva_en_Avolta.m4a"
+    },
+    {
+      "language": "Português",
+      "region": "(Brazil)",
+      "flag": "🇧🇷",
+      "audioSrc": "/audio/apr-2026/A_engenharia_invisível_das_compras_no_aeroporto.m4a"
+    }
+  ]
+}
