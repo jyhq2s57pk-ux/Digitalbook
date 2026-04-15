@@ -46,6 +46,7 @@ export function getEdition(slug: string): Edition | null {
     return [{
       slug: sectionConfig.slug,
       title: sectionData.title || sectionConfig.title,
+      navLabel: sectionData.navLabel,
       summary: sectionData.summary || '',
       color: sectionData.color || sectionConfig.color,
       order: sectionData.order ?? sectionConfig.order,

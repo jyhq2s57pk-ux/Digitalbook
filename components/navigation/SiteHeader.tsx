@@ -64,7 +64,7 @@ export default function SiteHeader({
                         : 'text-white hover:bg-white/10'
                     }`}
                   >
-                    {section.title}
+                    {section.navLabel || section.title}
                   </Link>
                 );
               })}

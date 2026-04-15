@@ -33,6 +33,7 @@ export interface NutshellBlock {
 export interface Section {
   slug: string;
   title: string;
+  navLabel?: string;
   summary: string;
   color: string;
   order: number;
