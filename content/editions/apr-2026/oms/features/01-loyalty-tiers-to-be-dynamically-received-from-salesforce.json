@@ -9,8 +9,6 @@
   "regions": ["Global"],
   "platforms": ["OMS"],
   "images": [
-    "/images/apr-2026/OMS/slide12-1.png",
-    "/images/apr-2026/OMS/slide12-2.png",
-    "/images/apr-2026/OMS/slide12-3.png"
+    "/images/apr-2026/OMS/order-details.png"
   ]
 }
