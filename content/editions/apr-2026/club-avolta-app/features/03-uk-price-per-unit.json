@@ -1,0 +1,12 @@
+{
+  "slug": "uk-price-per-unit",
+  "title": "UK — Price per Unit",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "Enable legally compliant unit pricing across the App for UK customers, ensuring clear and accurate price per unit display everywhere a product price is shown.",
+  "description": "Transparent unit pricing is now consistently displayed across all UK digital touchpoints, ensuring legal compliance and enabling clearer product comparison for customers. Feature available to activate for any location where its future needed.",
+  "tags": ["pricing", "compliance", "UK"],
+  "regions": ["UK"],
+  "platforms": ["Website", "App"],
+  "images": ["/images/apr-2026/App/slide10-1.png"]
+}

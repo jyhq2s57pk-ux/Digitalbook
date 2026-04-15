@@ -1,0 +1,12 @@
+{
+  "slug": "my-autogrill-smart-security-notification-deployment",
+  "title": "My Autogrill — Smart Security Notification Deployment",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "Seamlessly manage the user transition to new security standards by implementing a dedicated in-app and web communication flow that guides customers through the mandatory password update.",
+  "description": "To support the ongoing security migration, we have released a specific \"talking message\" across all digital touchpoints. When a user with an outdated password logs in, a proactive notification appears: \"The security of your data is important: to protect your account, your password has expired. Please use the 'Forgot password?' function to set a new one.\" This feature is designed to minimize user friction and reduce customer support requests by providing clear, actionable instructions directly within the App and Website, ensuring users can independently and securely regain access to their accounts.",
+  "tags": ["security", "password", "notifications"],
+  "regions": ["Global"],
+  "platforms": ["Website", "App", "My Autogrill"],
+  "images": ["/images/apr-2026/myautogrill/slide16-1.png"]
+}

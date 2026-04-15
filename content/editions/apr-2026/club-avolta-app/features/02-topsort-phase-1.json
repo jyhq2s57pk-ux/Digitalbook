@@ -1,0 +1,15 @@
+{
+  "slug": "topsort-phase-1",
+  "title": "Topsort Phase 1",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "Enable scalable, revenue-maximizing digital advertising across app and web through auction-based placements.",
+  "description": "The Topsort integration introduces an auction-driven advertising system across Avolta’s app and web platforms. By dynamically serving placements to the highest bidders, it ensures optimal revenue generation while maintaining relevance for users. This unlocks a new, scalable monetization channel within the digital ecosystem.",
+  "tags": ["advertising", "monetization", "Topsort"],
+  "regions": ["Global"],
+  "platforms": ["Website", "App"],
+  "images": [
+    "/images/apr-2026/App/slide9-1.png",
+    "/images/apr-2026/App/slide9-2.png"
+  ]
+}

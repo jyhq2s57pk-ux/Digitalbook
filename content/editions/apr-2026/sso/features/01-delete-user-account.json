@@ -1,0 +1,12 @@
+{
+  "slug": "delete-user-account",
+  "title": "Delete User Account",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "Re-add account deletion to the SSO Web UI to comply with Apple App Store requirements that any account created in an app must also be deletable from it.",
+  "description": "As a condition of having an App in the Apple App Store, if you can create an account in the app, you must be able to delete the account in the app also. This feature was added in the Club Avolta App during 2023 however it is likely that this function was excluded during the Club Avolta rebranding effort in 2024. It is now required to re-add this feature to the SSO Web UI.",
+  "tags": ["account", "compliance", "Apple App Store"],
+  "regions": ["Global"],
+  "platforms": ["App", "Club Avolta", "SSO"],
+  "images": ["/images/apr-2026/SSO/slide14-1.png"]
+}

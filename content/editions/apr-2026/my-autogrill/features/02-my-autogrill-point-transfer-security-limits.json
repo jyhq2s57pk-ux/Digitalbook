@@ -1,0 +1,12 @@
+{
+  "slug": "my-autogrill-point-transfer-security-limits",
+  "title": "My Autogrill — Point Transfer Security Limits",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "Prevent fraudulent activities and align with market best practices by implementing specific thresholds for the peer-to-peer point donation feature.",
+  "description": "To enhance the security of our loyalty program, we have introduced a new regulation for point transfers between users. Each single donation now requires a minimum of 50 points and is capped at a maximum of 1,000 points. These limits are designed to mitigate the risk of account misuse and ensure a balanced ecosystem, protecting both the customers' point balances and the integrity of the My Autogrill digital world.",
+  "tags": ["loyalty", "security", "points"],
+  "regions": ["Global"],
+  "platforms": ["My Autogrill"],
+  "images": ["/images/apr-2026/myautogrill/slide17-1.png"]
+}

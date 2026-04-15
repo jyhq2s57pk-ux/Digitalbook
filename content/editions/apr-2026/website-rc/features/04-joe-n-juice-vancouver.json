@@ -1,0 +1,16 @@
+{
+  "slug": "joe-n-juice-vancouver",
+  "title": "Joe & The Juice Vancouver — Digital Catering Pilot",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "Pilot a digitized catering and bulk ordering solution for Joe & The Juice to support B2B use cases. Enable business partners and group customers to place and manage catering orders through a dedicated digital interface.",
+  "description": "This pilot focuses on introducing a Catering + Ordering format for non‑B2C customers such as businesses, tour groups, sports teams, and event organizers. Currently, catering orders at YVR are handled manually by operations, generating approximately 70k in annualized sales. The initiative aims to digitize this process by providing a shareable link or QR‑based frontend that enables seamless ordering and order management.",
+  "tags": ["PWA", "catering", "B2B", "Hudson"],
+  "regions": ["North America"],
+  "platforms": ["Website"],
+  "images": [
+    "/images/apr-2026/web/slide19-1.png",
+    "/images/apr-2026/web/slide19-2.png",
+    "/images/apr-2026/web/slide19-3.png"
+  ]
+}

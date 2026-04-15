@@ -8,7 +8,7 @@ Usage:
 
 Example:
     python3 scripts/pptx-to-features.py \
-        content/editions/mar-2026/powerpoint/Digital\ Book\ -\ Marchtemplate.pptx \
+        content/editions/april-2026/powerpoint/Digital\ Book\ -\ Apriltemplate.pptx \
         mar-2026
 
 What it does:
@@ -21,6 +21,8 @@ What it does:
 Prerequisites:
     pip install python-pptx
 """
+
+from __future__ import annotations
 
 import json
 import os

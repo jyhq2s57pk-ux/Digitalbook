@@ -1,0 +1,12 @@
+{
+  "slug": "topsort",
+  "title": "Topsort",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "Integrate existing media assets with Topsort to enable efficient, scalable management and monetization of paid media placements, including campaign setup and activation at the banner level across multiple sites and locations.",
+  "description": "We’re making it easier than ever to maximize our online advertising potential by connecting our media assets to Topsort. This integration lets us quickly set up, manage, and optimize banner campaigns on worlddutyfree.com and shopdutyfree—whether across all sites, by region, airport, or even specific terminals. With streamlined content replacement and smarter campaign tools, we’ll unlock new revenue streams and deliver more targeted, effective campaigns for advertisers.",
+  "tags": ["advertising", "monetization", "Topsort"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": ["/images/apr-2026/web/slide4-1.png"]
+}

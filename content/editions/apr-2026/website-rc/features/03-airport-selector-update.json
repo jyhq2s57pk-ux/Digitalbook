@@ -1,0 +1,12 @@
+{
+  "slug": "airport-selector-update",
+  "title": "Airport Selector Update",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "Ensure customers are only shown relevant terminals (duty-free or duty-paid) based on the site they are on, improving routing accuracy, reducing confusion, and increasing conversion across Brazil’s digital channels.",
+  "description": "Customers currently see a mixed list of domestic and international terminals regardless of context, leading to confusion, pricing mistrust, and misaligned journeys. This initiative introduces a business-line-aware airport selector that restricts terminal visibility to only valid options (duty-free or duty-paid), ensuring consistent pricing perception, clearer user journeys, and improved performance across Paid Media, CRM, SEO, and on-site conversion funnels.",
+  "tags": ["airport", "terminal selector", "Brazil"],
+  "regions": ["Brazil"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": ["/images/apr-2026/web/slide6-1.png"]
+}

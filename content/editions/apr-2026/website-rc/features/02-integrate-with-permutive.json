@@ -1,0 +1,12 @@
+{
+  "slug": "integrate-with-permutive",
+  "title": "Integrate with Permutive",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "Integrate the Permutive platform with Avolta to optimize real-time data collection, audience segmentation, and activation, enhancing the personalization and effectiveness of digital marketing campaigns across Avolta’s channels.",
+  "description": "This integration will enable first-party data collection from users interacting with Avolta’s digital touchpoints, allowing for granular audience segmentation and real-time activation of personalized campaigns. Leveraging Permutive will support privacy compliance, improve customer experience through relevant content and offers, and boost marketing results by optimizing audience use and accurately measuring campaign performance.",
+  "tags": ["data", "personalization", "Permutive"],
+  "regions": ["Global"],
+  "platforms": ["Website", "Reserve & Collect"],
+  "images": []
+}

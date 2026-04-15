@@ -1,0 +1,16 @@
+{
+  "slug": "loyalty-carousel-improvements",
+  "title": "Loyalty Carousel Improvements",
+  "status": "go-live",
+  "releaseDate": "Apr. 2026",
+  "goal": "To enhance the current rewards experience for members, through a redesign of the existing rewards pages, in line with the Avolta design framework.",
+  "description": "We have enhanced the Rewards Home, the Rewards List and the Rewards detail pages from a UI perspective to improve discoverability, clarity and engagement from members. The enhancements included improved hierarchy, updated layouts and new display components where content can be managed in Umbraco. This provides a more consistent rewards experience that is easier for members to browse and encourages reward exploration.",
+  "tags": ["rewards", "UI", "loyalty"],
+  "regions": ["Global"],
+  "platforms": ["App", "Club Avolta"],
+  "images": [
+    "/images/apr-2026/App/slide8-1.png",
+    "/images/apr-2026/App/slide8-2.png",
+    "/images/apr-2026/App/slide8-3.png"
+  ]
+}
