@@ -19,6 +19,7 @@ export interface Feature {
   regions: string[];
   platforms: string[];
   images: string[];
+  imageFit?: 'contain' | 'cover';
   owner?: string;
   jiraLink?: string;
   docsLink?: string;

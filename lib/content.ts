@@ -97,6 +97,7 @@ function loadFeatures(sectionDir: string): Feature[] {
         regions: data.regions || [],
         platforms: data.platforms || [],
         images: data.images || [],
+        imageFit: data.imageFit,
         owner: data.owner,
         jiraLink: data.jiraLink,
         docsLink: data.docsLink,

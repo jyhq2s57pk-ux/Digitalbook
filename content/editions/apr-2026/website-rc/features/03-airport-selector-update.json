@@ -8,5 +8,6 @@
   "tags": ["airport", "terminal selector", "Brazil"],
   "regions": ["Brazil"],
   "platforms": ["Website", "Reserve & Collect"],
-  "images": ["/images/apr-2026/web/airport-selector.png"]
+  "images": ["/images/apr-2026/web/airport-selector.png"],
+  "imageFit": "cover"
 }

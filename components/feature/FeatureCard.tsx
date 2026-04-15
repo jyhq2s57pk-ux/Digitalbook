@@ -136,6 +136,7 @@ export default function FeatureCard({
             src={feature.images.length > 0 ? feature.images[0] : '/images/jan-2026/desktop.png'}
             alt={`${feature.title} feature screenshot`}
             labelColor={labelColor}
+            fit={feature.imageFit}
           />
         </div>
 

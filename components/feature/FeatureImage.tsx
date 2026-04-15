@@ -7,9 +7,10 @@ interface FeatureImageProps {
   src: string;
   alt: string;
   labelColor: string;
+  fit?: 'contain' | 'cover';
 }
 
-export default function FeatureImage({ src, alt, labelColor }: FeatureImageProps) {
+export default function FeatureImage({ src, alt, labelColor, fit = 'contain' }: FeatureImageProps) {
   const [hasError, setHasError] = useState(false);
 
   if (hasError) {
@@ -25,7 +26,7 @@ export default function FeatureImage({ src, alt, labelColor }: FeatureImageProps
       src={src}
       alt={alt}
       fill
-      className="object-contain"
+      className={fit === 'cover' ? 'object-cover' : 'object-contain'}
       sizes="(max-width: 768px) 90vw, (max-width: 1200px) 70vw, 1000px"
       onError={() => setHasError(true)}
     />
