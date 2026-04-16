@@ -6,9 +6,21 @@
       "audioSrc": "/audio/apr-2026/How_Avolta_Code_Reshapes_Airport_Retail.m4a"
     },
     {
+      "language": "Italiano",
+      "flag": "🇮🇹",
+      "audioSrc": "/audio/apr-2026/L_algoritmo_invisibile_dello_shopping_in_aeroporto.m4a"
+    },
+    {
       "language": "Español",
+      "region": "(Spain)",
       "flag": "🇪🇸",
       "audioSrc": "/audio/apr-2026/Vender_más_con_fricción_positiva_en_Avolta.m4a"
+    },
+    {
+      "language": "Español",
+      "region": "(Latin America)",
+      "flag": "🌎",
+      "audioSrc": "/audio/apr-2026/Hiperdigitalización_y_seguridad_en_tiendas_Avolta.m4a"
     },
     {
       "language": "Português",
