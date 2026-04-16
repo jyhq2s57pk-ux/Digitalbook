@@ -2,5 +2,32 @@
   "title": "OMS",
   "summary": "",
   "color": "#00897B",
-  "order": 3
+  "order": 3,
+  "nutshell": [
+    {
+      "heading": "Promotion",
+      "items": [
+        "OMS Non-ADV promotions to target different marketplaces",
+        "Send non-ADV promotions as ADV on v2/promotion for marketplaces",
+        "Simple discounte Roundel and fake promotion from and to for channel promotions"
+      ]
+    },
+    {
+      "heading": "Meilisearch:",
+      "items": [
+        "Use Meilisearch in v2/orders endpoint"
+      ]
+    },
+    {
+      "heading": "Operational enhancements",
+      "items": [
+        "Show and filter marketplace on Non-ADV promotions.",
+        "Add minimum stock threshold indicator so that the store staff is aware of the stock when placing an order",
+        "Support Salesforce email sending by adding Salesforce_delivery_locations",
+        "Redesign the quota violations box",
+        "Improve promotion sync jobs to run daily.",
+        "Add details to the OMS tabs to indicate the details of the tab"
+      ]
+    }
+  ]
 }
