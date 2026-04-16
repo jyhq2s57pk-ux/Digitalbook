@@ -2,5 +2,18 @@
   "title": "SSO",
   "summary": "",
   "color": "#616161",
-  "order": 4
+  "order": 4,
+  "nutshell": [
+    {
+      "heading": "The technical topics on SSO this month are the following:",
+      "items": [
+        "SSO Admin platform",
+        "Telesign – SSO enhancements",
+        "Cryptography for earn & burn feature",
+        "Framework upgrades",
+        "Update of naming scheme for non-email accounts on Club Avolta"
+      ]
+    }
+  ],
+  "nutshellFooter": "Release 3.4.1 - April 22nd"
 }

@@ -2,5 +2,17 @@
   "title": "Club Avolta App",
   "summary": "",
   "color": "#8F53F0",
-  "order": 2
+  "order": 2,
+  "nutshell": [
+    {
+      "heading": "Released in April (App 6.17)",
+      "items": [
+        "Loyalty Carousel Improvements — Enhancing the rewards experience with improved design, clearer structure, and more engaging discovery across all key touchpoints.",
+        "Topsort Phase 1 — Introducing auction-based digital advertising to unlock smarter, scalable revenue across app and web.",
+        "Mandatory Shopping bag in Spain (behind a feature flag) — Provides clear, regulation‑aligned bag charging to enhance customer transparency and support legal compliance in Spain.",
+        "Price per unit display on Product cards, PDP, Cart — This feature delivers clear, consistent unit pricing across app screens to enhance customer transparency and ensure compliance to UK regulatory compliance (PMO 2004).",
+        "Streaks (behind a feature flag) — Streaks incentivizes repeat engagement with Club Avolta mini games, driving higher visit frequency and spend. Strategic rewards foster brand loyalty and keep Club Avolta top of mind throughout the travel journey."
+      ]
+    }
+  ]
 }
