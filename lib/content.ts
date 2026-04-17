@@ -100,13 +100,20 @@ function loadFeatures(sectionDir: string): Feature[] {
         imageFit: data.imageFit,
         imagePadY: data.imagePadY,
         imageBgColor: data.imageBgColor,
+        order: data.order,
         owner: data.owner,
         jiraLink: data.jiraLink,
         docsLink: data.docsLink,
         audioSources: data.audioSources,
       } satisfies Feature;
     })
-    .sort((a, b) => a.title.localeCompare(b.title));
+    .sort((a, b) => {
+      // Manual order (if set) wins; undefined sorts last, alphabetical within ties.
+      const ao = a.order ?? Number.POSITIVE_INFINITY;
+      const bo = b.order ?? Number.POSITIVE_INFINITY;
+      if (ao !== bo) return ao - bo;
+      return a.title.localeCompare(b.title);
+    });
 }
 
 // Static params generators for Next.js

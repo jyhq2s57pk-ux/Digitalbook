@@ -22,6 +22,7 @@ export interface Feature {
   imageFit?: 'contain' | 'cover' | 'natural';
   imagePadY?: number;
   imageBgColor?: string; // Overrides container bg (e.g., to match a GIF's own background)
+  order?: number; // Manual sort order within a section (lower = earlier). Undefined sorts last, alphabetically.
   owner?: string;
   jiraLink?: string;
   docsLink?: string;

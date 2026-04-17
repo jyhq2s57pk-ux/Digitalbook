@@ -1,6 +1,7 @@
 {
   "slug": "personalization-always-on",
   "title": "Personalization Always-On: Search Results Page",
+  "order": 6,
   "status": "go-live",
   "releaseDate": "From Apr. 2026",
   "goal": "We are introducing a new wave of personalization with enhanced segmentation strategies and use cases that will progressively roll out over the coming months to increase relevance and impact across the user journey. The next step is to implement the successful personalization on the Search Results Page by launching new tests to re-order Popular Categories.",

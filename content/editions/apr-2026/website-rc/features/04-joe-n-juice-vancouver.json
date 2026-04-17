@@ -1,6 +1,7 @@
 {
   "slug": "joe-n-juice-vancouver",
   "title": "Joe & The Juice Vancouver — Digital Catering Pilot",
+  "order": 3,
   "status": "go-live",
   "releaseDate": "Apr. 2026",
   "goal": "Pilot a digitized catering and bulk ordering solution for Joe & The Juice to support B2B use cases. Enable business partners and group customers to place and manage catering orders through a dedicated digital interface.",

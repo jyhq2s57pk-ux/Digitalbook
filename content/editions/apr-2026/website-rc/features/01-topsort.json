@@ -1,6 +1,7 @@
 {
   "slug": "topsort",
   "title": "Topsort",
+  "order": 1,
   "status": "go-live",
   "releaseDate": "Apr. 2026",
   "goal": "Integrate existing media assets with Topsort to enable efficient, scalable management and monetization of paid media placements, including campaign setup and activation at the banner level across multiple sites and locations.",

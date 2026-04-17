@@ -1,6 +1,7 @@
 {
   "slug": "airport-selector-update",
   "title": "Airport Selector Update",
+  "order": 4,
   "status": "go-live",
   "releaseDate": "Apr. 2026",
   "goal": "Ensure customers are only shown relevant terminals (duty-free or duty-paid) based on the site they are on, improving routing accuracy, reducing confusion, and increasing conversion across Brazil’s digital channels.",

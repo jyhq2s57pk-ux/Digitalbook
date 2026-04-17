@@ -1,6 +1,7 @@
 {
   "slug": "searching-for-bestsellers",
-  "title": "Searching for Bestsellers",
+  "title": "Eliminate Searching for Bestsellers",
+  "order": 7,
   "status": "go-live",
   "releaseDate": "Apr. 2026",
   "goal": "Continuously identify and address potential issues when users search for bestseller products and top brands, ensuring results are accurate, relevant, and aligned with user expectations.",
