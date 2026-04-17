@@ -8,5 +8,8 @@
   "tags": ["advertising", "monetization", "Topsort"],
   "regions": ["Global"],
   "platforms": ["Website", "Reserve & Collect"],
-  "images": ["/images/apr-2026/web/topsort.png"]
+  "images": ["/images/apr-2026/web/topsort-bidding-bars.gif"],
+  "imageFit": "natural",
+  "imagePadY": 40,
+  "imageBgColor": "#EDE6DA"
 }
