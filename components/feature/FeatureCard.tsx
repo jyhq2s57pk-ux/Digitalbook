@@ -83,12 +83,15 @@ export default function FeatureCard({
               >
                 Description
               </h3>
-              <p
-                className="text-[14px] leading-[22px] md:text-[15px] md:leading-[24px]"
-                style={{ color: bodyColor }}
-              >
-                {feature.description}
-              </p>
+              {feature.description.split(/\n\n+/).map((para, i) => (
+                <p
+                  key={i}
+                  className="text-[14px] leading-[22px] md:text-[15px] md:leading-[24px]"
+                  style={{ color: bodyColor, marginTop: i === 0 ? 0 : '0.75em' }}
+                >
+                  {para}
+                </p>
+              ))}
             </div>
 
             {/* Platform + Region tags */}
