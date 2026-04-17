@@ -26,8 +26,8 @@ export default function FeatureCard({
   const headingColor = isLight ? 'var(--color-night)' : '#FFFFFF';
   const bodyColor = isLight ? 'var(--color-night-20)' : '#CACACA';
   const labelColor = isLight ? 'var(--color-night-20)' : '#D3D3D3';
-  // Image placeholder colors from Figma
-  const imageBgColor = isLight ? 'var(--color-sand)' : '#454545';
+  // Image placeholder colors from Figma (feature can override via imageBgColor)
+  const imageBgColor = feature.imageBgColor ?? (isLight ? 'var(--color-sand)' : '#454545');
 
   return (
     <article

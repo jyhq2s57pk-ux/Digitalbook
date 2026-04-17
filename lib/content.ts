@@ -99,6 +99,7 @@ function loadFeatures(sectionDir: string): Feature[] {
         images: data.images || [],
         imageFit: data.imageFit,
         imagePadY: data.imagePadY,
+        imageBgColor: data.imageBgColor,
         owner: data.owner,
         jiraLink: data.jiraLink,
         docsLink: data.docsLink,

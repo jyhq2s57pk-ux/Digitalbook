@@ -21,6 +21,7 @@ export interface Feature {
   images: string[];
   imageFit?: 'contain' | 'cover' | 'natural';
   imagePadY?: number;
+  imageBgColor?: string; // Overrides container bg (e.g., to match a GIF's own background)
   owner?: string;
   jiraLink?: string;
   docsLink?: string;

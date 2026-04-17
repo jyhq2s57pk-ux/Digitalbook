@@ -10,5 +10,6 @@
   "platforms": ["Website", "Reserve & Collect"],
   "images": ["/images/apr-2026/web/permutive-pipeline.gif"],
   "imageFit": "natural",
-  "imagePadY": 40
+  "imagePadY": 40,
+  "imageBgColor": "#EDE6DA"
 }
