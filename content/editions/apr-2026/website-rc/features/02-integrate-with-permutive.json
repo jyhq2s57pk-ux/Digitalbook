@@ -8,5 +8,7 @@
   "tags": ["data", "personalization", "Permutive"],
   "regions": ["Global"],
   "platforms": ["Website", "Reserve & Collect"],
-  "images": ["/images/apr-2026/web/permutive-placeholder.png"]
+  "images": ["/images/apr-2026/web/permutive-pipeline.gif"],
+  "imageFit": "natural",
+  "imagePadY": 40
 }
